@@ -1,53 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dharanesh Palaniappan | Astrophysics Portfolio</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dharanesh Palaniappan | Astronomy Portfolio</title>
+  <style>
+    /* --- Reset and Base --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #e0e0e0;
+      overflow-x: hidden;
+      background: black;
+    }
+
+    /* --- Starfield Background Animation --- */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(white, rgba(255,255,255,0) 70%) repeat;
+      background-size: 3px 3px;
+      animation: moveStars 100s linear infinite;
+      z-index: -2;
+      opacity: 0.25;
+    }
+
+    @keyframes moveStars {
+      from { transform: translate(0, 0); }
+      to { transform: translate(-1000px, -1000px); }
+    }
+
+    /* --- Header --- */
+    header {
+      text-align: center;
+      padding: 100px 20px 60px;
+      background: linear-gradient(180deg, rgba(10,10,20,0.8), rgba(0,0,0,0.9));
+      color: #66fcf1;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      text-shadow: 0 0 10px #45a29e;
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #c5c6c7;
+      margin-top: 10px;
+    }
+
+    /* --- Navigation --- */
+    nav {
+      text-align: center;
+      background: rgba(0,0,0,0.8);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(6px);
+    }
+
+    nav a {
+      color: #45a29e;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #66fcf1;
+      text-shadow: 0 0 10px #66fcf1;
+    }
+
+    /* --- Sections --- */
+    section {
+      max-width: 900px;
+      margin: 60px auto;
+      background: rgba(20, 20, 30, 0.7);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.6);
+    }
+
+    section h2 {
+      color: #66fcf1;
+      border-bottom: 2px solid #45a29e;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    section ul li {
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    /* --- Contact Links --- */
+    a {
+      color: #45a29e;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      color: #66fcf1;
+      text-shadow: 0 0 6px #66fcf1;
+    }
+
+    /* --- Footer --- */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: rgba(10,10,20,0.9);
+      color: #c5c6c7;
+      margin-top: 50px;
+      font-size: 0.9em;
+    }
+
+    /* --- Add a soft glow behind content --- */
+    .glow {
+      text-shadow: 0 0 10px #66fcf1;
+    }
+  </style>
 </head>
 <body>
 
-  <header class="hero">
-    <div class="overlay"></div>
-    <div class="hero-text">
-      <h1>Dharanesh Palaniappan</h1>
-      <p>Astrophysics Researcher • Observational Astronomy • Infrared & Optical Studies</p>
-      <a href="#about" class="btn">Explore</a>
-    </div>
+  <header>
+    <h1 class="glow">Dharanesh Palaniappan</h1>
+    <p>Physics Student | Astronomy Enthusiast | Research Portfolio</p>
   </header>
 
   <nav>
     <a href="#about">About</a>
-    <a href="#research">Research</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <section id="about">
     <h2>About Me</h2>
-    <p>I’m a physics graduate passionate about astrophysics and space science, with experience in telescope operation, data analysis, and outreach programs. My research interests include improving the resolution and sensitivity of ground-based and space telescopes.</p>
-  </section>
-
-  <section id="research">
-    <h2>Research Interests</h2>
-    <ul>
-      <li>High-precision infrared and optical telescope systems</li>
-      <li>Light pollution and atmospheric correction methods</li>
-      <li>Asteroid characterization and orbital analysis</li>
-    </ul>
+    <p>
+      I’m Dharanesh, a Physics student passionate about astrophysics, space science, and data analysis.
+      My interests include exoplanet detection, telescope observations, and optical–infrared astronomy.
+      I enjoy working with real astronomical data and exploring ways to make space more understandable through outreach and research.
+    </p>
   </section>
 
   <section id="projects">
-    <h2>Featured Projects</h2>
-    <div class="project">
-      <h3>Asteroid 2021 CP66 Analysis</h3>
-      <p>Preliminary analysis using Pan-STARRS data — focusing on astrometry, photometry, and trajectory estimation using Astrometrica and Python.</p>
-    </div>
-    <div class="project">
-      <h3>Exoplanet Light Curve Study</h3>
-      <p>Using Lightkurve and TESS data to identify potential exoplanet transits and estimate orbital periods.</p>
-    </div>
+    <h2>Projects</h2>
+    <ul>
+      <li><strong>Exoplanet Light Curve Analysis:</strong> Analyzed stellar light curves using Python and Lightkurve to detect potential transiting exoplanets.</li>
+      <li><strong>Asteroid Tracking (IASC):</strong> Processed FITS images from Pan-STARRS to identify asteroid 2021 CP66 and calculate its motion parameters.</li>
+      <li><strong>Solar Feature Classification:</strong> Classified Active Regions, Coronal Holes, and Quiet Sun zones using intensity thresholds from AIA images.</li>
+      <li><strong>Public Outreach:</strong> Organized telescope nights and astronomy awareness programs as part of local science initiatives.</li>
+    </ul>
   </section>
 
   <section id="contact">
@@ -58,9 +171,8 @@
   </section>
 
   <footer>
-    <p>© 2025 Dharanesh Palaniappan | Inspired by the Cosmos</p>
+    © 2025 Dharanesh Palaniappan | Made with 🌌 and Python
   </footer>
 
-  <script src="js/script.js"></script>
 </body>
 </html>
