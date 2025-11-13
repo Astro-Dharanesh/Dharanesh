@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dharanesh Palaniappan | Astronomy Portfolio</title>
   <style>
-    /* --- Reset and Base --- */
     * {
       margin: 0;
       padding: 0;
@@ -16,53 +15,31 @@
       font-family: 'Poppins', sans-serif;
       color: #e0e0e0;
       overflow-x: hidden;
-      background: black;
+      background: url("assets/images/background.jpg") no-repeat center center fixed;
+      background-size: cover;
+      background-attachment: fixed;
     }
 
-    /* --- Real Astronomy Background --- */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('js/assets/images/nightsky.jpg') center center / cover no-repeat;
-      z-index: -3;
-      opacity: 0.35; /* Adjust this for image brightness */
-      filter: brightness(0.8) saturate(1.2);
-    }
-
-    /* --- Gentle Starfield Overlay --- */
     body::after {
       content: "";
       position: fixed;
       top: 0; left: 0;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(white, rgba(255,255,255,0) 70%) repeat;
-      background-size: 3px 3px;
-      animation: moveStars 120s linear infinite;
-      z-index: -2;
-      opacity: 0.15; /* Faint star sparkle */
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: -1;
     }
 
-    @keyframes moveStars {
-      from { transform: translate(0, 0); }
-      to { transform: translate(-1000px, -1000px); }
-    }
-
-    /* --- Header --- */
     header {
       text-align: center;
       padding: 100px 20px 60px;
-      background: linear-gradient(180deg, rgba(10,10,20,0.8), rgba(0,0,0,0.9));
+      background: rgba(0,0,0,0.6);
       color: #66fcf1;
+      backdrop-filter: blur(5px);
     }
 
     header h1 {
-      font-size: 2.5em;
-      text-shadow: 0 0 10px #45a29e;
+      font-size: 2.8em;
+      text-shadow: 0 0 12px #45a29e;
     }
 
     header p {
@@ -71,21 +48,20 @@
       margin-top: 10px;
     }
 
-    /* --- Navigation --- */
     nav {
       text-align: center;
-      background: rgba(0,0,0,0.8);
+      background: rgba(0,0,0,0.85);
       padding: 15px 0;
       position: sticky;
       top: 0;
       z-index: 10;
-      backdrop-filter: blur(6px);
+      backdrop-filter: blur(8px);
     }
 
     nav a {
       color: #45a29e;
       text-decoration: none;
-      margin: 0 20px;
+      margin: 0 18px;
       font-weight: 600;
       transition: 0.3s;
     }
@@ -95,30 +71,33 @@
       text-shadow: 0 0 10px #66fcf1;
     }
 
-    /* --- Sections --- */
     section {
-      max-width: 900px;
+      max-width: 950px;
       margin: 60px auto;
-      background: rgba(20, 20, 30, 0.7);
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 25px rgba(0,0,0,0.6);
+      background: rgba(20,20,30,0.75);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.7);
     }
 
     section h2 {
       color: #66fcf1;
       border-bottom: 2px solid #45a29e;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
+      padding-bottom: 8px;
+      margin-bottom: 25px;
       text-align: center;
+      text-shadow: 0 0 10px #45a29e;
+    }
+
+    section ul {
+      list-style: none;
+      line-height: 1.7;
     }
 
     section ul li {
       margin-bottom: 15px;
-      line-height: 1.6;
     }
 
-    /* --- Contact Links --- */
     a {
       color: #45a29e;
       transition: 0.3s;
@@ -129,7 +108,6 @@
       text-shadow: 0 0 6px #66fcf1;
     }
 
-    /* --- Footer --- */
     footer {
       text-align: center;
       padding: 25px;
@@ -139,9 +117,12 @@
       font-size: 0.9em;
     }
 
-    /* --- Add a soft glow behind content --- */
     .glow {
       text-shadow: 0 0 10px #66fcf1;
+    }
+
+    strong {
+      color: #66fcf1;
     }
   </style>
 </head>
@@ -149,31 +130,124 @@
 
   <header>
     <h1 class="glow">Dharanesh Palaniappan</h1>
-    <p>Physics Student | Astronomy Enthusiast | Research Portfolio</p>
+    <p>Physics Student | Astronomy Enthusiast </p>
   </header>
 
   <nav>
     <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#publications">Publications</a>
+    <a href="#conferences">Conferences</a>
     <a href="#projects">Projects</a>
+    <a href="#awards">Awards</a>
+    <a href="#volunteering">Volunteering</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <section id="about">
     <h2>About Me</h2>
     <p>
-      I am Dharanesh, a Physics student passionate about astrophysics, space science, and data analysis.
-      My interests include exoplanets heliophysics, telescope observations, and planetary science.
-      I enjoy working with real astronomical data and exploring ways to make space more understandable through outreach and research.
+      <strong>Dharanesh Palaniappan</strong><br>
+      Date of Birth: 18/06/2005 | Nationality: Indian <br>
+      Email: <a href="mailto:dharaneshpalaniappan@gmail.com">dharaneshpalaniappan@gmail.com</a> | 
+      LinkedIn: <a href="https://www.linkedin.com/in/dharanesh18" target="_blank">linkedin.com/in/dharanesh18</a><br>
+      Address: Tamil Nadu, India
     </p>
+    <p style="margin-top: 15px;">
+      I am Dharanesh, a Physics student passionate about astrophysics, space science, and data analysis. My interests include exoplanets heliophysics, telescope observations, and planetary science. I enjoy working with real astronomical data and exploring ways to make space more understandable through outreach and research.
+
+
+    </p>
+  </section>
+
+  <section id="experience">
+    <h2>Work Experience</h2>
+    <ul>
+      <li><strong>Astro-Ephemeris Club Secretary | Madras Christian College (2023–2025)</strong><br>
+      Organized astronomy activities, telescope-based stargazing, and celestial events. Maintained club records.</li>
+
+      <li><strong>Associate Placement Ambassador | Madras Christian College (2024–2025)</strong><br>
+      Served as liaison between Placement Cell and students, facilitating smooth recruitment communications.</li>
+
+      <li><strong>Citizen Scientist | International Asteroid Search Campaign (2025)</strong><br>
+      Analyzed FITS images using Astrometrica to identify asteroids, gaining hands-on astrometric and data analysis skills.</li>
+    </ul>
+  </section>
+
+  <section id="education">
+    <h2>Education & Training</h2>
+    <ul>
+      <li><strong>B.Sc. Physics | Madras Christian College (2022–2025)</strong><br>
+      CGPA: 8.06/10. Scored 98% in practicals and 80%+ in core physics subjects.</li>
+
+      <li><strong>Confronting The Big Questions: Modern Astronomy | University of Rochester</strong><br>
+      Completed with 99% score. Covered stellar life cycles, galaxies, and cosmic history.</li>
+
+      <li><strong>Astronomy: Exploring Time and Space | University of Arizona</strong><br>
+      Covered telescopes, stellar evolution, black holes, cosmology, and scientific thinking.</li>
+
+      <li><strong>The Science of the Solar System | Caltech</strong><br>
+      Explored planetary science, exoplanets, and space missions with Prof. Mike Brown.</li>
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <p>
+      Celestron Software | Telescope Handling | Python (Basics) | Astrometrica | Experimental Physics |
+      UNIX (Basics) | Lightkurve | SunPy | Basic Electronics
+    </p>
+  </section>
+
+  <section id="publications">
+    <h2>Publications</h2>
+    <p>
+      <strong>Preliminary Analysis of a Potential Asteroid from the IASC Campaign Using Pan-STARRS Data</strong><br>
+      Dharanesh Palaniappan (2025). arXiv (Preprint).  
+      <a href="https://arxiv.org/pdf/2506.02963" target="_blank">View Paper</a>
+    </p>
+  </section>
+
+  <section id="conferences">
+    <h2>Conferences & Seminars</h2>
+    <ul>
+      <li><strong>CERN@70 | IIT Madras:</strong> Lectures by CERN scientists on particle physics and collider research.</li>
+      <li><strong>High Energy Materials | SDSC SHAR:</strong> Seminar on propulsion and space research.</li>
+      <li><strong>Asteroid Bennu Lecture | Vatican Observatory:</strong> Talk by Br. Guy Consolmagno SJ.</li>
+      <li><strong>Raychaudhuri Centenary | IMSc Chennai:</strong> Seminar on gravitation and cosmology.</li>
+      <li><strong>YASSC 2025:</strong> Presented asteroid research paper CP66, selected for state-level round.</li>
+      <li><strong>Intro2Astro Workshop (2025):</strong> Learned Python, data analysis, and astronomy career paths.</li>
+      <li><strong>SAASS 2025:</strong> Analysed real solar data using Parker Solar Probe, HMI & AIA.</li>
+      <li><strong>ZTF Summer School 2025:</strong> Focused on transient detection and light curve analysis.</li>
+      <li><strong>Sagan Workshop 2025:</strong> Training on exoplanet detection and transit analysis methods.</li>
+      <li><strong>10 Years of Gravitational Wave Astronomy | IIT Madras:</strong> Learned from experts on GW physics.</li>
+    </ul>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
     <ul>
-      <li><strong>Exoplanet Light Curve Analysis:</strong> Analyzed stellar light curves using Python and Lightkurve to detect potential transiting exoplanets.</li>
-      <li><strong>Asteroid Tracking (IASC):</strong> Processed FITS images from Pan-STARRS to identify asteroid 2021 CP66 and calculate its motion parameters.</li>
-      <li><strong>Solar Feature Classification:</strong> Classified Active Regions, Coronal Holes, and Quiet Sun zones using intensity thresholds from AIA images.</li>
-      <li><strong>Public Outreach:</strong> Organized telescope nights and astronomy programs as part of local science initiatives and as my department's Astro club secretary.</li>
+      <li><strong>Digital Measuring Scale:</strong> Built an ultrasonic-based embedded measuring system.</li>
+      <li><strong>Statistical Analysis of Exoplanet Host Stars (Ongoing):</strong> Studying 500 stars using MAST data and Python tools.</li>
+      <li><strong>Solar Remote Sensing & Active Region Studies (Ongoing):</strong> Using SDO (AIA/HMI) & PSP data for solar analysis.</li>
+    </ul>
+  </section>
+
+  <section id="awards">
+    <h2>Honours & Awards</h2>
+    <p>
+      <strong>Silver Honour – International Astronomy and Astrophysics Competition (2023)</strong><br>
+      Recognized internationally for excellence in problem-solving and space science.
+    </p>
+  </section>
+
+  <section id="volunteering">
+    <h2>Volunteering</h2>
+    <ul>
+      <li><strong>Young Student Scientist Programme (2024–Present):</strong> Guided students in interactive science sessions (TNSCST).</li>
+      <li><strong>Star Party (2023–Present):</strong> Participated as student resource in Vigyan Prasar event — telescope operation and public outreach.</li>
     </ul>
   </section>
 
@@ -182,10 +256,11 @@
     <p>Email: <a href="mailto:dharaneshpalaniappan@gmail.com">dharaneshpalaniappan@gmail.com</a></p>
     <p>LinkedIn: <a href="https://www.linkedin.com/in/dharanesh18" target="_blank">linkedin.com/in/dharanesh18</a></p>
     <p>GitHub: <a href="https://github.com/dharanesh18" target="_blank">github.com/dharanesh18</a></p>
+
   </section>
 
   <footer>
-    © 2025 Dharanesh Palaniappan
+    © 2025 Dharanesh Palaniappan | Made with 🌌 and Python
   </footer>
 
 </body>
