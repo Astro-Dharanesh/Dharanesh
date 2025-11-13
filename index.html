@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dharanesh Palaniappan | Astronomy Portfolio</title>
   <style>
+    /* --- Reset and Base --- */
     * {
       margin: 0;
       padding: 0;
@@ -20,15 +21,19 @@
       background-attachment: fixed;
     }
 
+    /* --- Overlay to darken background for readability --- */
     body::after {
       content: "";
       position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.7);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.65);
       z-index: -1;
     }
 
+    /* --- Header --- */
     header {
       text-align: center;
       padding: 100px 20px 60px;
@@ -48,20 +53,21 @@
       margin-top: 10px;
     }
 
+    /* --- Navigation --- */
     nav {
       text-align: center;
-      background: rgba(0,0,0,0.85);
+      background: rgba(0,0,0,0.75);
       padding: 15px 0;
       position: sticky;
       top: 0;
       z-index: 10;
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(6px);
     }
 
     nav a {
       color: #45a29e;
       text-decoration: none;
-      margin: 0 18px;
+      margin: 0 20px;
       font-weight: 600;
       transition: 0.3s;
     }
@@ -71,20 +77,21 @@
       text-shadow: 0 0 10px #66fcf1;
     }
 
+    /* --- Sections --- */
     section {
-      max-width: 950px;
+      max-width: 900px;
       margin: 60px auto;
-      background: rgba(20,20,30,0.75);
-      padding: 40px;
-      border-radius: 15px;
-      box-shadow: 0 0 25px rgba(0,0,0,0.7);
+      background: rgba(20, 20, 30, 0.75);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.6);
     }
 
     section h2 {
       color: #66fcf1;
       border-bottom: 2px solid #45a29e;
-      padding-bottom: 8px;
-      margin-bottom: 25px;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
       text-align: center;
       text-shadow: 0 0 10px #45a29e;
     }
@@ -108,6 +115,7 @@
       text-shadow: 0 0 6px #66fcf1;
     }
 
+    /* --- Footer --- */
     footer {
       text-align: center;
       padding: 25px;
@@ -130,7 +138,7 @@
 
   <header>
     <h1 class="glow">Dharanesh Palaniappan</h1>
-    <p>Physics Student | Astronomy Enthusiast </p>
+    <p>Physics Student | Astronomy Enthusiast | Research Portfolio</p>
   </header>
 
   <nav>
@@ -156,9 +164,7 @@
       Address: Tamil Nadu, India
     </p>
     <p style="margin-top: 15px;">
-      I am Dharanesh, a Physics student passionate about astrophysics, space science, and data analysis. My interests include exoplanets heliophysics, telescope observations, and planetary science. I enjoy working with real astronomical data and exploring ways to make space more understandable through outreach and research.
-
-
+      I am Dharanesh, a Physics student passionate about astrophysics, space science, and data analysis. My interests include exoplanets, heliophysics, telescope observations, and planetary science. I enjoy working with real astronomical data and exploring ways to make space more understandable through outreach and research.
     </p>
   </section>
 
@@ -256,7 +262,6 @@
     <p>Email: <a href="mailto:dharaneshpalaniappan@gmail.com">dharaneshpalaniappan@gmail.com</a></p>
     <p>LinkedIn: <a href="https://www.linkedin.com/in/dharanesh18" target="_blank">linkedin.com/in/dharanesh18</a></p>
     <p>GitHub: <a href="https://github.com/dharanesh18" target="_blank">github.com/dharanesh18</a></p>
-
   </section>
 
   <footer>
