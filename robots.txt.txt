@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dharanesh186.netlify.app/sitemap.xml
