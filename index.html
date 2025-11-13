@@ -19,8 +19,22 @@
       background: black;
     }
 
-    /* --- Starfield Background Animation --- */
+    /* --- Real Astronomy Background --- */
     body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('assets/images/nightsky.jpg') center center / cover no-repeat;
+      z-index: -3;
+      opacity: 0.35; /* Adjust this for image brightness */
+      filter: brightness(0.8) saturate(1.2);
+    }
+
+    /* --- Gentle Starfield Overlay --- */
+    body::after {
       content: "";
       position: fixed;
       top: 0; left: 0;
@@ -28,9 +42,9 @@
       height: 200%;
       background: radial-gradient(white, rgba(255,255,255,0) 70%) repeat;
       background-size: 3px 3px;
-      animation: moveStars 100s linear infinite;
+      animation: moveStars 120s linear infinite;
       z-index: -2;
-      opacity: 0.25;
+      opacity: 0.15; /* Faint star sparkle */
     }
 
     @keyframes moveStars {
@@ -147,8 +161,8 @@
   <section id="about">
     <h2>About Me</h2>
     <p>
-      I’m Dharanesh, a Physics student passionate about astrophysics, space science, and data analysis.
-      My interests include exoplanet detection, telescope observations, and optical–infrared astronomy.
+      I am Dharanesh, a Physics student passionate about astrophysics, space science, and data analysis.
+      My interests include exoplanets heliophysics, telescope observations, and planetary science.
       I enjoy working with real astronomical data and exploring ways to make space more understandable through outreach and research.
     </p>
   </section>
@@ -159,7 +173,7 @@
       <li><strong>Exoplanet Light Curve Analysis:</strong> Analyzed stellar light curves using Python and Lightkurve to detect potential transiting exoplanets.</li>
       <li><strong>Asteroid Tracking (IASC):</strong> Processed FITS images from Pan-STARRS to identify asteroid 2021 CP66 and calculate its motion parameters.</li>
       <li><strong>Solar Feature Classification:</strong> Classified Active Regions, Coronal Holes, and Quiet Sun zones using intensity thresholds from AIA images.</li>
-      <li><strong>Public Outreach:</strong> Organized telescope nights and astronomy awareness programs as part of local science initiatives.</li>
+      <li><strong>Public Outreach:</strong> Organized telescope nights and astronomy programs as part of local science initiatives and as my department's Astro club secretary.</li>
     </ul>
   </section>
 
@@ -171,7 +185,7 @@
   </section>
 
   <footer>
-    © 2025 Dharanesh Palaniappan | Made with 🌌 and Python
+    © 2025 Dharanesh Palaniappan
   </footer>
 
 </body>
