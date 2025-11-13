@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://dharanesh186.netlify.app/</loc>
+    <loc>https://astro-dharanesh.github.io/Dharanesh/</loc>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://astro-dharanesh.github.io/Dharanesh/about.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://astro-dharanesh.github.io/Dharanesh/projects.html</loc>
+    <priority>0.8</priority>
   </url>
 </urlset>
