@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://astro-dharanesh.github.io/Dharanesh/</loc>
-    <priority>1.0</priority>
-  </url>
-</urlset>
+# Blogger Sitemap created on, 11/18/2025, GMT
+# Sitemap built with https://blogging.pikitemplates.com/
+
+User-agent: *
+Disallow: /search
+Allow: /
+
+Sitemap: https://www.astro-dharanesh.github.io/sitemap.xml
+Sitemap: https://www.astro-dharanesh.github.io/sitemap-pages.xml
