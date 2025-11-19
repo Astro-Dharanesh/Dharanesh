@@ -1,9 +1,92 @@
-# Blogger Sitemap created on, 11/18/2025, GMT
-# Sitemap built with https://blogging.pikitemplates.com/
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-User-agent: *
-Disallow: /search
-Allow: /
+  <!-- Home Page -->
+  <url>
+    <loc>https://astro-dharanesh.github.io/Dharanesh/</loc>
+    <lastmod>2025-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
 
-Sitemap: https://www.astro-dharanesh.github.io/sitemap.xml
-Sitemap: https://www.astro-dharanesh.github.io/sitemap-pages.xml
+  <!-- About Section -->
+  <url>
+    <loc>https://astro-dharanesh.github.io/Dharanesh/#about</loc>
+    <lastmod>2025-11-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Experience Section -->
+  <url>
+    <loc>https://astro-dharanesh.github.io/Dharanesh/#experience</loc>
+    <lastmod>2025-11-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Education Section -->
+  <url>
+    <loc>https://astro-dharanesh.github.io/Dharanesh/#education</loc>
+    <lastmod>2025-11-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Skills Section -->
+  <url>
+    <loc>https://astro-dharanesh.github.io/Dharanesh/#skills</loc>
+    <lastmod>2025-11-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Publications Section -->
+  <url>
+    <loc>https://astro-dharanesh.github.io/Dharanesh/#publications</loc>
+    <lastmod>2025-11-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Conferences Section -->
+  <url>
+    <loc>https://astro-dharanesh.github.io/Dharanesh/#conferences</loc>
+    <lastmod>2025-11-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Projects Section -->
+  <url>
+    <loc>https://astro-dharanesh.github.io/Dharanesh/#projects</loc>
+    <lastmod>2025-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Awards Section -->
+  <url>
+    <loc>https://astro-dharanesh.github.io/Dharanesh/#awards</loc>
+    <lastmod>2025-11-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Volunteering Section -->
+  <url>
+    <loc>https://astro-dharanesh.github.io/Dharanesh/#volunteering</loc>
+    <lastmod>2025-11-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Contact Section -->
+  <url>
+    <loc>https://astro-dharanesh.github.io/Dharanesh/#contact</loc>
+    <lastmod>2025-11-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
