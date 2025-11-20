@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://dharanesh186.netlify.app/sitemap.xml
+
+Sitemap: https://astro-dharanesh.github.io/Dharanesh/sitemap.xml
