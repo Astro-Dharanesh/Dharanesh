@@ -25,6 +25,17 @@
       a:hover { color: #66fcf1; text-shadow: 0 0 6px #66fcf1; }
       footer { text-align: center; padding: 25px; background: rgba(10,10,20,0.9); color: #c5c6c7; margin-top: 50px; font-size: 0.9em; }
       .glow { text-shadow: 0 0 10px #66fcf1; }
+
+      /* NEW STYLE FOR CONSISTENCY: Remove the default top margin for non-index pages */
+      .page-content-wrapper { 
+        max-width: 900px;
+        margin: 0 auto 60px; /* Adjusting margin to place it directly below header/nav */
+        padding-top: 60px; /* Optional: Add top padding if needed */
+      }
+      /* Ensure the section content uses the wrapper styles on non-home pages */
+      .page-content-wrapper section {
+        margin: 0 0 30px 0; /* Removing automatic vertical margins */
+      }
     </style>
 </head>
 <body>
@@ -41,14 +52,15 @@
     <a href="#top">About</a>
   </nav>
 
-  <section id="top">
-    <h2>Journey into Astrophysics</h2>
-    <p>This space is perfect for a detailed, narrative description of your passion for astronomy, why you chose physics, your long-term career goals (e.g., graduate school, research), and what drives your work. It's the story behind the CV.</p>
-    
-    <h3>My Philosophy</h3>
-    <p>My belief is that the universe is the ultimate laboratory, and through dedication to data analysis and observation, we can uncover its deepest secrets.</p>
-  </section>
-
+  <div class="page-content-wrapper">
+    <section id="top">
+      <h2>The Journey into Astrophysics</h2>
+      <p>This space is perfect for a detailed, narrative description of your passion for astronomy, why you chose physics, your long-term career goals (e.g., graduate school, research), and what drives your work. It's the story behind the CV.</p>
+      
+      <h3>My Philosophy</h3>
+      <p>My belief is that the universe is the ultimate laboratory, and through dedication to data analysis and observation, we can uncover its deepest secrets.</p>
+    </section>
+  </div>
   <footer>
     © 2025 Dharanesh Palaniappan
   </footer>
