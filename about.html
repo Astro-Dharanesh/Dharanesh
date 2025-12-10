@@ -3,7 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dharanesh Palaniappan | About</title>
+    <title>Dharanesh Palaniappan | About My Journey</title>
+
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Personal mission, vision, and philosophy detailing Dharanesh Palaniappan's passion for astrophysics and long-term research goals in exoplanetary science and observational astronomy.">
+    <meta name="keywords" content="Dharanesh Palaniappan, astronomy, astrophysics, research, physics, exoplanets, heliophysics, telescope, MCC, space science, IASC, MASS, observational astronomy, infrared, optical telescope">
+    <meta name="author" content="Dharanesh Palaniappan">
+    <meta property="og:title" content="Dharanesh Palaniappan | About My Journey">
+    <meta property="og:description" content="Personal mission, vision, and philosophy detailing Dharanesh Palaniappan's passion for astrophysics and long-term research goals.">
+    <meta property="og:url" content="https://astro-dharanesh.github.io/Dharanesh/about.html">
+    <meta property="og:image" content="https://astro-dharanesh.github.io/Dharanesh/assets/images/nightsky.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://astro-dharanesh.github.io/Dharanesh/assets/images/nightsky.jpg">
+
     <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body { font-family: 'Poppins', sans-serif; color: #e0e0e0; overflow-x: hidden; background: black; }
@@ -25,7 +38,15 @@
       a:hover { color: #66fcf1; text-shadow: 0 0 6px #66fcf1; }
       footer { text-align: center; padding: 25px; background: rgba(10,10,20,0.9); color: #c5c6c7; margin-top: 50px; font-size: 0.9em; }
       .glow { text-shadow: 0 0 10px #66fcf1; }
-      /* The content wrapper fixes are removed to simplify and unify the styling across all pages */
+      /* Consistency Styles for Non-Index Pages */
+      .page-content-wrapper { 
+        max-width: 900px;
+        margin: 0 auto 60px;
+        padding-top: 60px;
+      }
+      .page-content-wrapper section {
+        margin: 0 0 30px 0;
+      }
     </style>
 </head>
 <body>
@@ -36,22 +57,25 @@
   </header>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="blog.html">Blog</a> 
-    <a href="social-media.html">Contact</a> 
-    <a href="about.html">About</a> </nav>
+    <a href="index.html">Home (CV)</a>
+    <a href="blog.html" target="_blank">Blog</a>
+    <a href="social-media.html" target="_blank">Contact</a>
+    <a href="#top">About</a>
+  </nav>
 
-  <section id="top">
-    <h2>The Journey into Astrophysics</h2>
-    <p>My interest in astronomy began with a simple curiosity about the night sky, which quickly evolved into a rigorous pursuit of physics. My journey focuses heavily on observational astronomy, utilizing skills gained from the International Asteroid Search Campaign (IASC) and various workshops on data analysis. I aim to contribute to the field of exoplanetary science, using computational methods to process large datasets and uncover new celestial objects.</p>
-    
-    <h3>My Philosophy</h3>
-    <p>My belief is that the universe is the ultimate laboratory, and through dedication to data analysis and observation, we can uncover its deepest secrets. I am committed to open science, collaborative research, and effective public outreach to share the wonder of astrophysics with the next generation.</p>
+  <div class="page-content-wrapper">
+    <section id="top">
+      <h2>The Journey into Astrophysics</h2>
+      <p>My interest in astronomy began with a simple curiosity about the night sky, which quickly evolved into a rigorous pursuit of physics. My journey focuses heavily on observational astronomy, utilizing skills gained from the International Asteroid Search Campaign (IASC) and various workshops on data analysis. I aim to contribute to the field of exoplanetary science, using computational methods to process large datasets and uncover new celestial objects.</p>
+      
+      <h3>My Philosophy</h3>
+      <p>My belief is that the universe is the ultimate laboratory, and through dedication to data analysis and observation, we can uncover its deepest secrets. I am committed to open science, collaborative research, and effective public outreach to share the wonder of astrophysics with the next generation.</p>
 
-    <p style="text-align: center; margin-top: 20px;">
-      <a href="index.html">Back to Home</a>
-    </p>
-  </section>
+      <p style="text-align: center; margin-top: 20px;">
+        <a href="index.html">Back to Home (CV)</a>
+      </p>
+    </section>
+  </div>
 
   <footer>
     © 2025 Dharanesh Palaniappan

@@ -3,7 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dharanesh Palaniappan | Contact</title>
+    <title>Dharanesh Palaniappan | Contact Me</title>
+
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Contact information, professional links (LinkedIn, ORCID ID), GitHub, and public outreach channels (YouTube, Instagram) for Dharanesh Palaniappan.">
+    <meta name="keywords" content="Dharanesh Palaniappan, contact, email, LinkedIn, GitHub, ORCID, social media, astronomy, outreach">
+    <meta name="author" content="Dharanesh Palaniappan">
+    <meta property="og:title" content="Dharanesh Palaniappan | Contact Me">
+    <meta property="og:description" content="Contact information, professional links, and social media channels for Dharanesh Palaniappan.">
+    <meta property="og:url" content="https://astro-dharanesh.github.io/Dharanesh/social-media.html">
+    <meta property="og:image" content="https://astro-dharanesh.github.io/Dharanesh/assets/images/nightsky.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://astro-dharanesh.github.io/Dharanesh/assets/images/nightsky.jpg">
+
     <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body { font-family: 'Poppins', sans-serif; color: #e0e0e0; overflow-x: hidden; background: black; }
@@ -16,7 +29,6 @@
       nav { text-align: center; background: rgba(0,0,0,0.8); padding: 15px 0; position: sticky; top: 0; z-index: 10; backdrop-filter: blur(6px); }
       nav a { color: #45a29e; text-decoration: none; margin: 0 20px; font-weight: 600; transition: 0.3s; }
       nav a:hover { color: #66fcf1; text-shadow: 0 0 10px #66fcf1; }
-      /* Section margin is now consistent across all pages */
       section { max-width: 900px; margin: 60px auto; background: rgba(20, 20, 30, 0.7); padding: 30px; border-radius: 12px; box-shadow: 0 0 25px rgba(0,0,0,0.6); }
       section h2 { color: #66fcf1; border-bottom: 2px solid #45a29e; padding-bottom: 10px; margin-bottom: 20px; text-align: center; }
       section h3 { color: #66fcf1; margin-top: 25px; margin-bottom: 10px; }
@@ -26,6 +38,17 @@
       a:hover { color: #66fcf1; text-shadow: 0 0 6px #66fcf1; }
       footer { text-align: center; padding: 25px; background: rgba(10,10,20,0.9); color: #c5c6c7; margin-top: 50px; font-size: 0.9em; }
       .glow { text-shadow: 0 0 10px #66fcf1; }
+      
+      /* NEW STYLE FOR CONSISTENCY: Remove the default top margin for non-index pages */
+      .page-content-wrapper { 
+        max-width: 900px;
+        margin: 0 auto 60px; /* Adjusting margin to place it directly below header/nav */
+        padding-top: 60px; /* Optional: Add top padding if needed */
+      }
+      /* Ensure the section content uses the wrapper styles on non-home pages */
+      .page-content-wrapper section {
+        margin: 0 0 30px 0; /* Removing automatic vertical margins */
+      }
     </style>
 </head>
 <body>
@@ -36,26 +59,28 @@
   </header>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="blog.html">Blog</a>
-    <a href="social-media.html">Contact</a>
-    <a href="about.html">About</a>
+    <a href="index.html">Home (CV)</a>
+    <a href="blog.html" target="_blank">Blog</a>
+    <a href="#top">Contact</a>
+    <a href="about.html" target="_blank">About</a>
   </nav>
 
-  <section id="top">
-    <h2>My Professional & Academic Links</h2>
-    <ul>
-      <li>📧 Email: <a href="mailto:dharaneshpalaniappan@gmail.com">dharaneshpalaniappan@gmail.com</a></li>
-      <li>🔗 LinkedIn: <a href="https://www.linkedin.com/in/dharanesh18" target="_blank">linkedin.com/in/dharanesh18</a></li>
-      <li>💻 GitHub: <a href="https://github.com/astro-dharanesh" target="_blank">astro-dharanesh</a></li>
-      <li>🆔 ORCID ID: <a href="https://orcid.org/0009-0009-3374-1650" target="_blank">Dharanesh Palaniappan</a></li>
-      <li>▶️ YouTube: <a href="https://www.youtube.com/@the_astrophile_journal" target="_blank">The Astrophile Journal</a></li>
-      <li>📸 Instagram: <a href="https://www.instagram.com/dharan_esh_?igsh=ZGMzdndkbXBjNmk2" target="_blank">dharan_esh_</a></li>
-    </ul>
-    <p style="text-align: center; margin-top: 20px;">
-      <a href="index.html">Back to Home</a>
-    </p>
-  </section>
+  <div class="page-content-wrapper">
+    <section id="top">
+      <h2>My Professional & Academic Links</h2>
+      <ul>
+        <li>📧 Email: <a href="mailto:dharaneshpalaniappan@gmail.com">dharaneshpalaniappan@gmail.com</a></li>
+        <li>🔗 LinkedIn: <a href="https://www.linkedin.com/in/dharanesh18" target="_blank">linkedin.com/in/dharanesh18</a></li>
+        <li>💻 GitHub: <a href="https://github.com/astro-dharanesh" target="_blank">astro-dharanesh</a></li>
+        <li>🆔 ORCID ID: <a href="https://orcid.org/0009-0009-3374-1650" target="_blank">Dharanesh Palaniappan</a></li>
+        <li>▶️ YouTube: <a href="https://www.youtube.com/@the_astrophile_journal" target="_blank">The Astrophile Journal</a></li>
+        <li>📸 Instagram: <a href="https://www.instagram.com/dharan_esh_?igsh=ZGMzdndkbXBjNmk2" target="_blank">dharan_esh_</a></li>
+      </ul>
+      <p style="text-align: center; margin-top: 20px;">
+        <a href="index.html">Back to Home (CV)</a>
+      </p>
+    </section>
+  </div>
   
   <footer>
     © 2025 Dharanesh Palaniappan

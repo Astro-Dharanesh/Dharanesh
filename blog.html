@@ -3,7 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dharanesh Palaniappan | Blog</title>
+    <title>Dharanesh Palaniappan | Blog & Journal</title>
+
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Academic and public outreach journal featuring research updates, technical tutorials, and science communication articles by Dharanesh Palaniappan.">
+    <meta name="keywords" content="Dharanesh Palaniappan, astronomy, astrophysics, research, physics, exoplanets, heliophysics, telescope, data analysis, IASC, observational astronomy">
+    <meta name="author" content="Dharanesh Palaniappan">
+    <meta property="og:title" content="Dharanesh Palaniappan | Blog & Journal">
+    <meta property="og:description" content="Academic and public outreach journal featuring research updates, technical tutorials, and science communication articles by Dharanesh Palaniappan.">
+    <meta property="og:url" content="https://astro-dharanesh.github.io/Dharanesh/blog.html">
+    <meta property="og:image" content="https://astro-dharanesh.github.io/Dharanesh/assets/images/nightsky.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://astro-dharanesh.github.io/Dharanesh/assets/images/nightsky.jpg">
+
     <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body { font-family: 'Poppins', sans-serif; color: #e0e0e0; overflow-x: hidden; background: black; }
@@ -16,7 +29,6 @@
       nav { text-align: center; background: rgba(0,0,0,0.8); padding: 15px 0; position: sticky; top: 0; z-index: 10; backdrop-filter: blur(6px); }
       nav a { color: #45a29e; text-decoration: none; margin: 0 20px; font-weight: 600; transition: 0.3s; }
       nav a:hover { color: #66fcf1; text-shadow: 0 0 10px #66fcf1; }
-      /* Section margin is now consistent across all pages */
       section { max-width: 900px; margin: 60px auto; background: rgba(20, 20, 30, 0.7); padding: 30px; border-radius: 12px; box-shadow: 0 0 25px rgba(0,0,0,0.6); }
       section h2 { color: #66fcf1; border-bottom: 2px solid #45a29e; padding-bottom: 10px; margin-bottom: 20px; text-align: center; }
       section h3 { color: #66fcf1; margin-top: 25px; margin-bottom: 10px; }
@@ -26,30 +38,52 @@
       a:hover { color: #66fcf1; text-shadow: 0 0 6px #66fcf1; }
       footer { text-align: center; padding: 25px; background: rgba(10,10,20,0.9); color: #c5c6c7; margin-top: 50px; font-size: 0.9em; }
       .glow { text-shadow: 0 0 10px #66fcf1; }
+      /* Consistency Styles for Non-Index Pages */
+      .page-content-wrapper { 
+        max-width: 900px;
+        margin: 0 auto 60px;
+        padding-top: 60px;
+      }
+      .page-content-wrapper section {
+        margin: 0 0 30px 0;
+      }
     </style>
 </head>
 <body>
 
   <header>
-    <h1 class="glow">Blog</h1>
-    <p>Thoughts and Discoveries in Astronomy</p>
+    <h1 class="glow">The Astrophile Journal</h1>
+    <p>Research, Outreach, and Tutorials</p>
   </header>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="blog.html">Blog</a>
-    <a href="social-media.html">Contact</a>
-    <a href="about.html">About</a>
+    <a href="index.html">Home (CV)</a>
+    <a href="#top">Blog</a>
+    <a href="social-media.html" target="_blank">Contact</a>
+    <a href="about.html" target="_blank">About</a>
   </nav>
 
-  <section id="top">
-    <h2>Latest Blog Posts</h2>
-    <p>This is the designated space for your detailed blog content. You can add links to external articles or start writing here.</p>
-    
-    <h3>Post Title Example: The Search for Exoplanet X</h3>
-    <p>Date: December 9, 2025</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
-  </section>
+  <div class="page-content-wrapper">
+    <section id="top">
+      <h2>Recent Publications & Posts</h2>
+      
+      <h3>Post Title: Analyzing Stellar Light Curves</h3>
+      <p>Date: December 10, 2025</p>
+      <p>A deep dive into using Astropy and Python to process raw telescope data and identify variable stars. This post details the steps from raw FITS files to final photometric plots.</p>
+      <p style="text-align: right;">
+        <a href="post-example.html">Read the full article...</a>
+      </p>
+
+      <hr style="border-color: rgba(69, 162, 158, 0.4); margin: 30px 0;">
+
+      <h3>Post Title: An Introduction to ORCID IDs</h3>
+      <p>Date: November 20, 2025</p>
+      <p>Why every researcher needs a persistent identifier, how to sign up, and how to link it to your papers and profiles.</p>
+      <p style="text-align: right;">
+        <a href="orcid-tutorial.html">Read the full article...</a>
+      </p>
+    </section>
+  </div>
 
   <footer>
     © 2025 Dharanesh Palaniappan
