@@ -2,49 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://astro-dharanesh.github.io/Dharanesh/</loc>
+    <loc>https://astro-dharanesh.github.io/Dharanesh/index.html</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://astro-dharanesh.github.io/Dharanesh/about</loc>
+    <loc>https://astro-dharanesh.github.io/Dharanesh/about.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://astro-dharanesh.github.io/Dharanesh/experience</loc>
+    <loc>https://astro-dharanesh.github.io/Dharanesh/blog.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://astro-dharanesh.github.io/Dharanesh/education</loc>
-  </url>
-
-  <url>
-    <loc>https://astro-dharanesh.github.io/Dharanesh/skills</loc>
-  </url>
-
-  <url>
-    <loc>https://astro-dharanesh.github.io/Dharanesh/publications</loc>
-  </url>
-
-  <url>
-    <loc>https://astro-dharanesh.github.io/Dharanesh/conferences</loc>
-  </url>
-
-  <url>
-    <loc>https://astro-dharanesh.github.io/Dharanesh/projects</loc>
-  </url>
-
-  <url>
-    <loc>https://astro-dharanesh.github.io/Dharanesh/awards</loc>
-  </url>
-
-  <url>
-    <loc>https://astro-dharanesh.github.io/Dharanesh/volunteering</loc>
-  </url>
-
-  <url>
-    <loc>https://astro-dharanesh.github.io/Dharanesh/contact</loc>
+    <loc>https://astro-dharanesh.github.io/Dharanesh/social-media.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
 
 </urlset>
