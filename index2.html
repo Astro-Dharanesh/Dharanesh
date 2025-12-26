@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Client-side PDF Merge & Split</title>
+  <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 700px; margin: auto; }
+    button { margin: 6px 0; padding: 8px 14px; }
+    input { margin: 6px 0; }
+  </style>
+</head>
+<body>
+
+<h2>📄 Client-side PDF Merge</h2>
+<input type="file" id="mergeFiles" multiple accept="application/pdf">
+<br>
+<button onclick="mergePDFs()">Merge PDFs</button>
+
+<hr>
+
+<h2>✂ Client-side PDF Split</h2>
+<input type="file" id="splitFile" accept="application/pdf">
+<br>
+<label>Page number to extract:</label>
+<input type="number" id="pageNum" min="1">
+<br>
+<button onclick="splitPDF()">Split PDF</button>
+
+<script>
+const { PDFDocument } = PDFLib;
+
+/* ---------- MERGE ---------- */
+async function mergePDFs() {
+  const files = document.getElementById('mergeFiles').files;
+  if (!files.length) return alert("Select PDF files");
+
+  const mergedPdf = await PDFDocument.create();
+
+  for (const file of files) {
+    const bytes = await file.arrayBuffer();
+    const pdf = await PDFDocument.load(bytes);
+    const pages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
+    pages.forEach(page => mergedPdf.addPage(page));
+  }
+
+  downloadPDF(await mergedPdf.save(), "merged.pdf");
+}
+
+/* ---------- SPLIT (single page) ---------- */
+async function splitPDF() {
+  const file = document.getElementById('splitFile').files[0];
+  const pageNum = parseInt(document.getElementById('pageNum').value);
+
+  if (!file || !pageNum) return alert("Select PDF & page number");
+
+  const bytes = await file.arrayBuffer();
+  const pdf = await PDFDocument.load(bytes);
+
+  if (pageNum > pdf.getPageCount())
+    return alert("Page number out of range");
+
+  const newPdf = await PDFDocument.create();
+  const [page] = await newPdf.copyPages(pdf, [pageNum - 1]);
+  newPdf.addPage(page);
+
+  downloadPDF(await newPdf.save(), "split-page.pdf");
+}
+
+/* ---------- DOWNLOAD ---------- */
+function downloadPDF(bytes, filename) {
+  const blob = new Blob([bytes], { type: "application/pdf" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = filename;
+  link.click();
+}
+</script>
+
+</body>
+</html>
