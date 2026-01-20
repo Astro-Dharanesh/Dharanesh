@@ -22,30 +22,40 @@
       body { font-family: 'Poppins', sans-serif; color: #e0e0e0; overflow-x: hidden; background: black; }
       body::before { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('assets/images/nightsky.jpg') center center / cover no-repeat; z-index: -3; opacity: 0.35; filter: brightness(0.8) saturate(1.2); }
       body::after { content: ""; position: fixed; top: 0; left: 0; width: 200%; height: 200%; background: radial-gradient(white, rgba(255,255,255,0) 70%) repeat; background-size: 3px 3px; animation: moveStars 120s linear infinite; z-index: -2; opacity: 0.15; }
+      
       @keyframes moveStars { from { transform: translate(0, 0); } to { transform: translate(-1000px, -1000px); } }
+      
       header { text-align: center; padding: 100px 20px 60px; background: linear-gradient(180deg, rgba(10,10,20,0.8), rgba(0,0,0,0.9)); color: #66fcf1; }
       header h1 { font-size: 2.5em; text-shadow: 0 0 10px #45a29e; }
       header p { font-size: 1.2em; color: #c5c6c7; margin-top: 10px; }
+      
       nav { text-align: center; background: rgba(0,0,0,0.8); padding: 15px 0; position: sticky; top: 0; z-index: 10; backdrop-filter: blur(6px); }
       nav a { color: #45a29e; text-decoration: none; margin: 0 20px; font-weight: 600; transition: 0.3s; }
       nav a:hover { color: #66fcf1; text-shadow: 0 0 10px #66fcf1; }
+      
       section { max-width: 900px; margin: 60px auto; background: rgba(20, 20, 30, 0.7); padding: 30px; border-radius: 12px; box-shadow: 0 0 25px rgba(0,0,0,0.6); }
       section h2 { color: #66fcf1; border-bottom: 2px solid #45a29e; padding-bottom: 10px; margin-bottom: 20px; text-align: center; }
       section h3 { color: #66fcf1; margin-top: 25px; margin-bottom: 10px; }
-      section ul { margin-left: 20px; }
-      section ul li { margin-bottom: 10px; line-height: 1.6; }
-      a { color: #45a29e; transition: 0.3s; }
+      
+      p { line-height: 1.8; margin-bottom: 15px; }
+      a { color: #45a29e; text-decoration: none; transition: 0.3s; }
       a:hover { color: #66fcf1; text-shadow: 0 0 6px #66fcf1; }
-      footer { text-align: center; padding: 25px; background: rgba(10,10,20,0.9); color: #c5c6c7; margin-top: 50px; font-size: 0.9em; }
+      
+      footer { text-align: center; padding: 40px 20px; background: rgba(10,10,20,0.95); color: #c5c6c7; margin-top: 50px; font-size: 0.9em; border-top: 1px solid rgba(102, 252, 241, 0.1); }
       .glow { text-shadow: 0 0 10px #66fcf1; }
-      /* Consistency Styles for Non-Index Pages */
-      .page-content-wrapper { 
-        max-width: 900px;
-        margin: 0 auto 60px;
-        padding-top: 60px;
+
+      .counter-wrapper {
+        margin-top: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
       }
-      .page-content-wrapper section {
-        margin: 0 0 30px 0;
+      .counter-label {
+        font-size: 0.75em;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #45a29e;
       }
     </style>
 </head>
@@ -58,29 +68,42 @@
 
   <nav>
     <a href="index.html">Home (CV)</a>
-    <a href="blog.html" target="_blank">Blog</a>
-    <a href="social-media.html" target="_blank">Contact</a>
+    <a href="blog.html">Blog</a>
+    <a href="social-media.html">Contact</a>
     <a href="#top">About</a>
   </nav>
 
   <div class="page-content-wrapper">
     <section id="top">
       <h2>The Journey into Astrophysics</h2>
-      <p>My interest in astronomy began with a simple curiosity about the night sky, which quickly evolved into a rigorous pursuit of physics. “Somewhere, something incredible is waiting to be known.” These words reflect something deeply personal, my constant urge to ask why, and my growing admiration for the universe’s mysteries Dr. Abdul Kalam's contribution to India's development in space technology and his journey from a humble background to becoming a great scientist and leader of our country has profoundly inspired me. My current interests are Exoplanets, Heliophysics and Planetary science. My journey so far has been shaped by curiosity, hands-on learning. I believe my journey in Physics will not only deepen my knowledge but also make me a researcher and help me to contribute to our scientific community. I’m excited to move towards my dream of working in space science. 
-
- </p>
+      <p>My interest in astronomy began with a simple curiosity about the night sky, which quickly evolved into a rigorous pursuit of physics. <strong>“Somewhere, something incredible is waiting to be known.”</strong> These words reflect something deeply personal: my constant urge to ask why and my growing admiration for the universe’s mysteries.</p>
+      
+      <p>Dr. Abdul Kalam's contribution to India's development in space technology and his journey from a humble background to becoming a great scientist and leader has profoundly inspired me. My current interests lie in <strong>Exoplanets, Heliophysics, and Planetary Science</strong>. My journey so far has been shaped by curiosity and hands-on learning. I believe my path in Physics will not only deepen my knowledge but also help me contribute meaningfully to the scientific community as a researcher. I’m excited to move towards my dream of working in space science.</p>
       
       <h3>My Philosophy</h3>
-      <p>My belief is that the universe is the ultimate laboratory, and through dedication to data analysis and observation, we can uncover its deepest secrets. I am committed to open science, collaborative research, and effective public outreach to share the wonder of astrophysics with the next generation.</p>
+      <p>I believe that the universe is the ultimate laboratory. Through dedication to data analysis and observation, we can uncover its deepest secrets. I am committed to open science, collaborative research, and effective public outreach to share the wonder of astrophysics with the next generation.</p>
 
-      <p style="text-align: center; margin-top: 20px;">
-        <a href="index.html">Back to Home (CV)</a>
-      </p>
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="index.html" style="border: 1px solid #45a29e; padding: 10px 20px; border-radius: 5px;">← Back to Home (CV)</a>
+      </div>
     </section>
   </div>
 
   <footer>
-    © 2025 Dharanesh Palaniappan
+    <p>© 2025 Dharanesh Palaniappan</p>
+    
+    <div class="counter-wrapper">
+      <span class="counter-label">Visitor Count</span>
+      
+      <div id="sfcqnwcpc375epdxqdhn4udbeujm81cyx58"></div>
+      <script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=qnwcpc375epdxqdhn4udbeujm81cyx58&down=async" async></script>
+      <noscript>
+        <a href="https://www.freecounterstat.com" title="website counter">
+          <img src="https://counter1.optistats.ovh/private/freecounterstat.php?c=qnwcpc375epdxqdhn4udbeujm81cyx58" border="0" title="website counter" alt="website counter">
+        </a>
+      </noscript>
+    </div>
   </footer>
+
 </body>
 </html>
