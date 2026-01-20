@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dharanesh Palaniappan | Blog & Journal</title>
+
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Academic and public outreach journal featuring research updates, technical tutorials, and science communication articles by Dharanesh Palaniappan.">
+    <meta name="keywords" content="Dharanesh Palaniappan, astronomy, astrophysics, research, physics, exoplanets, heliophysics, telescope, data analysis, IASC, observational astronomy">
+    <meta name="author" content="Dharanesh Palaniappan">
+    <meta property="og:title" content="Dharanesh Palaniappan | Blog & Journal">
+    <meta property="og:description" content="Academic and public outreach journal featuring research updates, technical tutorials, and science communication articles by Dharanesh Palaniappan.">
+    <meta property="og:url" content="https://astro-dharanesh.github.io/Dharanesh/blog.html">
+    <meta property="og:image" content="https://astro-dharanesh.github.io/Dharanesh/assets/images/nightsky.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://astro-dharanesh.github.io/Dharanesh/assets/images/nightsky.jpg">
+
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Poppins', sans-serif; color: #e0e0e0; overflow-x: hidden; background: black; }
+      body::before { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('assets/images/nightsky.jpg') center center / cover no-repeat; z-index: -3; opacity: 0.35; filter: brightness(0.8) saturate(1.2); }
+      body::after { content: ""; position: fixed; top: 0; left: 0; width: 200%; height: 200%; background: radial-gradient(white, rgba(255,255,255,0) 70%) repeat; background-size: 3px 3px; animation: moveStars 120s linear infinite; z-index: -2; opacity: 0.15; }
+      @keyframes moveStars { from { transform: translate(0, 0); } to { transform: translate(-1000px, -1000px); } }
+      
+      header { text-align: center; padding: 100px 20px 60px; background: linear-gradient(180deg, rgba(10,10,20,0.8), rgba(0,0,0,0.9)); color: #66fcf1; }
+      header h1 { font-size: 2.5em; text-shadow: 0 0 10px #45a29e; }
+      header p { font-size: 1.2em; color: #c5c6c7; margin-top: 10px; }
+      
+      nav { text-align: center; background: rgba(0,0,0,0.8); padding: 15px 0; position: sticky; top: 0; z-index: 10; backdrop-filter: blur(6px); }
+      nav a { color: #45a29e; text-decoration: none; margin: 0 20px; font-weight: 600; transition: 0.3s; }
+      nav a:hover { color: #66fcf1; text-shadow: 0 0 10px #66fcf1; }
+      
+      section { max-width: 900px; margin: 60px auto; background: rgba(20, 20, 30, 0.7); padding: 30px; border-radius: 12px; box-shadow: 0 0 25px rgba(0,0,0,0.6); border: 1px solid rgba(102, 252, 241, 0.1); }
+      section h2 { color: #66fcf1; border-bottom: 2px solid #45a29e; padding-bottom: 10px; margin-bottom: 20px; text-align: center; }
+      section h3 { color: #66fcf1; margin-top: 25px; margin-bottom: 10px; }
+      
+      .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; border: 2px solid #45a29e; margin: 20px 0; }
+      .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+      footer { text-align: center; padding: 25px; background: rgba(10,10,20,0.9); color: #c5c6c7; margin-top: 50px; font-size: 0.9em; }
+      .glow { text-shadow: 0 0 10px #66fcf1; }
+      
+      .page-content-wrapper { max-width: 900px; margin: 0 auto 60px; padding-top: 20px; }
+    </style>
+</head>
+<body>
+
+  <header>
+    <h1 class="glow">The Astrophile Journal</h1>
+    <p>Research, Outreach, and Tutorials</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home (CV)</a>
+    <a href="#top">Blog</a>
+    <a href="social-media.html" target="_blank">Contact</a>
+    <a href="about.html" target="_blank">About</a>
+  </nav>
+
+  <div class="page-content-wrapper">
+    
+    <section id="multimedia">
+      <h2>Latest Video Presentations</h2>
+      <div class="video-container">
+        <iframe 
+          src="https://www.youtube.com/embed/videoseries?list=UUWzY9Wv8mR5N9V-0W3pG-iw" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p style="text-align: center;">
+        <a href="https://www.youtube.com/@the_astrophile_journal" target="_blank" class="glow">Visit The Astrophile Journal on YouTube →</a>
+      </p>
+    </section>
+
+  </div>
+
+  <footer>
+    © 2025 Dharanesh Palaniappan
+  </footer>
+</body>
+</html>
