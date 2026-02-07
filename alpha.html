@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Alpha Blessy - Physics Postgraduate, aspiring IFS Officer">
+  <title>Alpha Blessy | Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* --- Reset & Base Styles --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8fbf8;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* --- Header --- */
+    header {
+      background: linear-gradient(135deg, #0a6847, #007b55);
+      color: white;
+      text-align: center;
+      padding: 2.5rem 1rem;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+      font-weight: 300;
+    }
+
+    /* --- Navigation --- */
+    nav {
+      background-color: #0a6847;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 1rem 1.5rem;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #064a32;
+    }
+
+    /* --- Hero Section --- */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    }
+
+    .hero h2 {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      font-size: 2rem;
+    }
+
+    /* --- Main Content --- */
+    main {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2.section-title {
+      color: #0a6847;
+      font-size: 1.8rem;
+      border-left: 5px solid #0a6847;
+      padding-left: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .profile-img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #0a6847;
+      margin-bottom: 1rem;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    /* --- Footer --- */
+    footer {
+      background-color: #0a6847;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 1.5rem;
+        padding: 0.8rem 1.2rem;
+      }
+
+      main {
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Alpha Blessy</h1>
+    <p>Physics Postgraduate | Aspiring Indian Forest Officer 🌿</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#career">Career Objective</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="hero">
+    <h2>"Protecting Nature, Preserving Life"</h2>
+  </section>
+
+  <main>
+    <!-- About Section -->
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <div class="card center">
+        <img src="https://cdn.pixabay.com/photo/2017/01/31/21/22/forest-2026642_1280.jpg" alt="Alpha Blessy Photo" class="profile-img">
+        <p>Hello! I’m <strong>Alpha Blessy</strong>, a Physics postgraduate student at <strong>Madras Christian College</strong>. 
+          I completed my schooling in Kanchipuram and my undergraduate studies in MCC, Tambaram. 
+          Currently, I serve as the <strong>Prayer Secretary</strong> of our department union.</p>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <h2 class="section-title">Skills & Interests</h2>
+      <div class="card">
+        <ul>
+          <li>🎤 Excellent communication & event coordination</li>
+          <li>🎶 Singing and dancing (part of Church choir)</li>
+          <li>✏️ Creative drawing & artistic sense</li>
+          <li>🌿 Leadership and organizing department programs</li>
+          <li>💬 Fluent in English & Tamil</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Career Objective -->
+    <section id="career">
+      <h2 class="section-title">Career Objective</h2>
+      <div class="card">
+        <p>I aspire to become an <strong>Indian Forest Service (IFoS)</strong> officer. My deep love for wildlife and nature drives me to serve and protect our forests. 
+          I believe that preserving the environment is not just a duty — it’s a lifelong mission and responsibility.</p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="card center">
+        <p>Email: <a href="mailto:alphablessy@example.com">alphablessy@example.com</a></p>
+        <p>Location: Tamil Nadu, India 🇮🇳</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Alpha Blessy | Designed with ❤️ to protect nature</p>
+  </footer>
+</body>
+</html>
