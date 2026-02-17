@@ -6,32 +6,28 @@
 
   <title>Unmasking the Transit | Dharanesh Palaniappan</title>
 
-  <meta name="description" content="A deep dive into signal recovery from NASA’s SDO Venus transit data, covering detrending, orbital drift, and astrophysical effects.">
+  <meta name="description" content="Unmasking the Transit: A Deep Dive into Signal Recovery from NASA’s SDO Venus Data">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: Georgia, "Times New Roman", serif;
       background: #f8f9fa;
       color: #1f1f1f;
-      line-height: 1.85;
+      line-height: 1.9;
     }
 
     header {
-      background: white;
+      background: #ffffff;
       border-bottom: 1px solid #ddd;
       padding: 60px 20px 40px;
       text-align: center;
     }
 
     header h1 {
-      font-size: 2.4em;
-      margin-bottom: 8px;
+      font-size: 2.5em;
+      margin-bottom: 10px;
     }
 
     header p {
@@ -40,7 +36,7 @@
     }
 
     nav {
-      background: white;
+      background: #ffffff;
       border-bottom: 1px solid #ddd;
       padding: 15px 0;
       text-align: center;
@@ -63,9 +59,9 @@
       gap: 40px;
     }
 
-    /* LEFT SIDEBAR */
+    /* Sidebar */
     .sidebar {
-      background: white;
+      background: #ffffff;
       padding: 30px;
       border-radius: 6px;
       box-shadow: 0 4px 14px rgba(0,0,0,0.05);
@@ -105,17 +101,17 @@
       text-decoration: none;
     }
 
-    /* ARTICLE */
+    /* Article */
     article {
-      background: white;
-      padding: 50px;
+      background: #ffffff;
+      padding: 55px;
       border-radius: 6px;
       box-shadow: 0 4px 14px rgba(0,0,0,0.05);
     }
 
     article h2 {
-      font-size: 2.2em;
-      margin-bottom: 10px;
+      font-size: 2.3em;
+      margin-bottom: 12px;
     }
 
     .post-meta {
@@ -125,39 +121,47 @@
     }
 
     article h3 {
-      margin-top: 40px;
-      margin-bottom: 12px;
-      font-size: 1.4em;
+      margin-top: 45px;
+      margin-bottom: 14px;
+      font-size: 1.45em;
     }
 
-    article p, article li {
+    article p {
+      margin-bottom: 22px;
       font-size: 1.05em;
-      margin-bottom: 20px;
       text-align: justify;
     }
 
     article ul {
-      margin-left: 25px;
+      margin-left: 28px;
+      margin-bottom: 22px;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 25px;
+    article li {
+      margin-bottom: 12px;
     }
 
-    table th, table td {
-      border: 1px solid #ddd;
-      padding: 10px;
+    /* Figure */
+    figure {
+      margin: 35px 0;
       text-align: center;
     }
 
-    table th {
-      background: #f1f1f1;
+    figure img {
+      max-width: 100%;
+      border-radius: 6px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+
+    figcaption {
+      margin-top: 10px;
+      font-size: 0.9em;
+      color: #555;
+      font-style: italic;
     }
 
     footer {
-      background: white;
+      background: #ffffff;
       border-top: 1px solid #ddd;
       text-align: center;
       padding: 30px;
@@ -190,13 +194,13 @@
 
 <main class="container">
 
-  <!-- LEFT SIDEBAR -->
+  <!-- Sidebar -->
   <aside class="sidebar">
     <h3>Next Articles</h3>
     <ul>
       <li><a href="vesta.html">Vesta: Goddess of the Hearth</a></li>
       <li><a href="ceres.html">Ceres: The King of the Asteroids</a></li>
-      <li><a href="#">Solar Active Region Analysis</a></li>
+      <li><a href="#">Solar Active Region Studies</a></li>
     </ul>
 
     <h3>Tags</h3>
@@ -206,69 +210,81 @@
       <a href="#">Signal Processing</a>
       <a href="#">Venus Transit</a>
       <a href="#">SDO/HMI</a>
-      <a href="#">Heliophysics</a>
+      <a href="#">Detrending</a>
       <a href="#">Exoplanet Methods</a>
     </div>
   </aside>
 
-  <!-- ARTICLE -->
+  <!-- Article -->
   <article>
 
     <h2>Unmasking the Transit: A Deep Dive into Signal Recovery from NASA’s SDO Venus Data</h2>
 
     <div class="post-meta">
-      By Dharanesh Palaniappan · October 2023
+      By Dharanesh Palaniappan · October 2023<br>
+      <strong>Keywords:</strong> Astrophysics, Data Science, Signal Processing, Venus Transit, SDO/HMI, Detrending, Exoplanet Methods
     </div>
-
-    <p><strong>Keywords:</strong> <em>Astrophysics, Data Science, Signal Processing, Venus Transit, SDO/HMI, Detrending, Exoplanet Methods</em></p>
 
     <h3>1. Introduction: The "Simple" Theory of Transit</h3>
     <p>
       In the world of modern astronomy, the "Transit Method" is the gold standard for discovering new worlds. The logic is elegant and seemingly simple: when a planet passes between a star and an observer, it blocks a small fraction of the star's light. By measuring this "dip" in brightness, we can calculate the planet’s size, orbital velocity, and even atmospheric composition.
     </p>
+
     <p>
-      When I set out to analyze the 2012 Venus Transit using raw data from NASA’s <strong>Solar Dynamics Observatory (SDO)</strong>, I expected to see this textbook "U-shaped" dip immediately. However, I quickly learned that between the physical event and the final data table lies a gauntlet of instrumental noise, orbital mechanics, and solar physics. This article documents the journey of extracting a tiny planetary signal from a mountain of cosmic noise.
+      When I set out to analyze the 2012 Venus Transit using raw data from NASA’s Solar Dynamics Observatory (SDO), I expected to see this textbook "U-shaped" dip immediately. However, I quickly learned that between the physical event and the final data table lies a gauntlet of instrumental noise, orbital mechanics, and solar physics. This article documents the journey of extracting a tiny planetary signal from a mountain of cosmic noise.
     </p>
 
     <h3>2. Data Acquisition: The Multi-Modal Approach</h3>
     <p>
-      To analyze the transit, I utilized data from the <strong>Helioseismic and Magnetic Imager (HMI)</strong>. Rather than relying on a single data stream, I adopted a multi-modal approach to cross-verify the event:
+      To analyze the transit, I utilized data from the Helioseismic and Magnetic Imager (HMI). Rather than relying on a single data stream, I adopted a multi-modal approach to cross-verify the event:
     </p>
+
+    <figure>
+      <img src="js/assets/images/venus.png" alt="Venus transit observed with SDO HMI">
+      <figcaption>
+        Venus transit observed using NASA’s Solar Dynamics Observatory (SDO) HMI data.
+      </figcaption>
+    </figure>
+
     <ul>
-      <li><strong>HMI Continuum (Intensity):</strong> This measures the broadband visible light (the "photosphere") of the Sun. This was my primary tool for measuring the <strong>Transit Depth ()</strong>.</li>
-      <li><strong>HMI Magnetogram:</strong> This measures line-of-sight magnetic fields. Because Venus is essentially non-magnetic, it creates a total disruption in the solar magnetic map. While the intensity data was noisy, the Magnetogram acted as a high-precision <strong>"Clock,"</strong> providing clear timestamps for the four points of contact.</li>
+      <li><strong>HMI Continuum (Intensity):</strong> This measures the broadband visible light (the "photosphere") of the Sun. This was my primary tool for measuring the Transit Depth ().</li>
+      <li><strong>HMI Magnetogram:</strong> This measures line-of-sight magnetic fields. Because Venus is essentially non-magnetic, it creates a total disruption in the solar magnetic map. While the intensity data was noisy, the Magnetogram acted as a high-precision "Clock," providing clear timestamps for the four points of contact.</li>
     </ul>
 
     <h3>3. The Paradox: When Planets "Add" Light</h3>
     <p>
-      Upon plotting the raw <strong>Intensity</strong> data from a 20-hour window, I encountered a major contradiction. According to the Magnetogram, the transit began at <strong>Hour 22:00</strong> and ended at <strong>Hour 06:00</strong>. Yet, during this window, the solar intensity was actually <em>rising</em>.
+      Upon plotting the raw Intensity data from a 20-hour window, I encountered a major contradiction. According to the Magnetogram, the transit began at Hour 22:00 and ended at Hour 06:00. Yet, during this window, the solar intensity was actually rising.
     </p>
+
     <p>
-      Mathematically, a raw calculation suggested that Venus was "glowing" or adding energy to the Sun. The calculated radius ratio was nearly <strong>500% off</strong> from the known value of Venus. This is the moment I realized that in space science, <strong>raw data is often a lie.</strong>
+      Mathematically, a raw calculation suggested that Venus was "glowing" or adding energy to the Sun. The calculated radius ratio was nearly 500% off from the known value of Venus. This is the moment I realized that in space science, raw data is often a lie.
     </p>
 
     <h3>4. The Hidden Variable: SDO Orbital Drift</h3>
     <p>
-      The culprit behind the rising intensity was the <strong>Geosynchronous Orbit</strong> of the SDO satellite. As the satellite moves in its tilted figure-eight path above the Earth, its distance and relative velocity to the Sun change. This creates a "Diurnal Drift"—a 24-hour wave in the data.
-    </p>
-    <p>
-      In my 20-hour sample, this orbital "noise" was <strong>3.5 times larger</strong> than the actual signal of Venus. To see the planet, I had to build a mathematical model of the satellite's movement and subtract it from the observation.
+      The culprit behind the rising intensity was the Geosynchronous Orbit of the SDO satellite. As the satellite moves in its tilted figure-eight path above the Earth, its distance and relative velocity to the Sun change. This creates a "Diurnal Drift"—a 24-hour wave in the data.
     </p>
 
-    <h4>The Detrending Pipeline:</h4>
+    <p>
+      In my 20-hour sample, this orbital "noise" was 3.5 times larger than the actual signal of Venus. To see the planet, I had to build a mathematical model of the satellite's movement and subtract it from the observation.
+    </p>
+
+    <p><strong>The Detrending Pipeline:</strong></p>
     <ul>
       <li><strong>Isolation:</strong> I used the Magnetogram data to "mask" the hours when the planet was present.</li>
-      <li><strong>Regression:</strong> I applied a <strong>second-order polynomial regression</strong> to the "clean" hours (before and after the transit).</li>
+      <li><strong>Regression:</strong> I applied a second-order polynomial regression to the "clean" hours (before and after the transit).</li>
       <li><strong>Subtraction:</strong> By subtracting this background model from the raw data, I performed "detrending," effectively holding the satellite still in space.</li>
     </ul>
 
     <h3>5. Analyzing the Recovered Signal</h3>
     <p>
-      Once detrended, the "Scientific Truth" emerged. I successfully recovered a clean transit light curve with a depth of approximately <strong>0.0239%</strong>.
+      Once detrended, the "Scientific Truth" emerged. I successfully recovered a clean transit light curve with a depth of approximately 0.0239%.
     </p>
+
     <p>
       However, a second mystery appeared: even with clean data, my calculated radius ratio () was still higher than the textbook value for Venus (). This discrepancy is a result of two advanced astrophysical effects:
     </p>
+
     <ul>
       <li><strong>Limb Darkening:</strong> The Sun is not a flat, uniform disk. Because we look through more of the cooler, upper solar atmosphere at the edges, the Sun appears darker at the "limbs." This rounds the bottom of the transit curve.</li>
       <li><strong>Point Spread Function (PSF):</strong> Every telescope has an inherent "blur." The intense brightness of the Sun "bleeds" into the dark silhouette of Venus. This optical inflation makes the planet appear physically larger on the CCD sensor than it is in reality.</li>
@@ -276,12 +292,14 @@
 
     <h3>6. Conclusion: The Art of Data Reduction</h3>
     <p>
-      This Sunday project was a powerful reminder that <strong>Science is 10% calculation and 90% figuring out why your calculation was wrong.</strong> The transit method is simple in theory, but the reality involves fighting against satellite orbits, optical blurring, and solar atmospheric effects. Extracting a 0.02% signal from a 0.7% noise floor isn't just a math problem—it's a detective story.
+      This Sunday project was a powerful reminder that Science is 10% calculation and 90% figuring out why your calculation was wrong. The transit method is simple in theory, but the reality involves fighting against satellite orbits, optical blurring, and solar atmospheric effects. Extracting a 0.02% signal from a 0.7% noise floor isn't just a math problem—it's a detective story.
     </p>
-    <p>
-      For aspiring data scientists and astronomers, the lesson is clear: <strong>Don't look for the "clean" datasets. Look for the noisy ones. That is where the real physics is hidden.</strong>
 
-    <p><em>All data processed via Python using SDO/HMI public archives.</em> 🚀🛰️</p>
+    <p>
+      For aspiring data scientists and astronomers, the lesson is clear: Don't look for the "clean" datasets. Look for the noisy ones. That is where the real physics is hidden.
+    </p>
+
+    <p><em>All data processed via Python using SDO/HMI public archives.</em> 🚀</p>
 
   </article>
 
