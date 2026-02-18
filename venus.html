@@ -186,13 +186,13 @@
   <strong>Keywords:</strong> Astrophysics, Data Science, Signal Processing, Venus Transit, SDO/HMI, Detrending, Exoplanet Methods
 </div>
 
-<h3>1. Introduction: The "Simple" Theory of Transit</h3>
+<h3>1. Introduction: The Theory of Transit</h3>
 <p>
-In the world of modern astronomy, the "Transit Method" is the gold standard for discovering new worlds. The logic is elegant and seemingly simple: when a planet passes between a star and an observer, it blocks a small fraction of the star's light. By measuring this "dip" in brightness, we can calculate the planet’s size, orbital velocity, and even atmospheric composition.
+In the world of modern astronomy, the "Transit Method" is the gold standard for discovering exoplanets worlds. The logic behind this transit method is simple. (Does'nt mean it is easy to find all the exoplanets). When a planet passes between a star and an observer, it blocks a small fraction of the star's light. By measuring this "dip" in brightness, via series of observations, we can calculate the planet’s size, orbital velocity, and even atmospheric composition.
 </p>
 
 <p>
-When I set out to analyze the 2012 Venus Transit using raw data from NASA’s Solar Dynamics Observatory (SDO), I expected to see this textbook "U-shaped" dip immediately. However, I quickly learned that between the physical event and the final data table lies a gauntlet of instrumental noise, orbital mechanics, and solar physics. This article documents the journey of extracting a tiny planetary signal from a mountain of cosmic noise.
+I applied this transit logic to analyze the Transit Venus using raw data from NASA’s Solar Dynamics Observatory (SDO) on June 2012, I expected the time series plot of "Brightness vs Time" of Venus to have a "U-shaped" dip. However, I quickly learned that between the physical event and the final data table lies a gauntlet of instrumental noise, orbital mechanics, and solar physics. This article documents the journey of extracting a tiny planetary signal from a mountain of cosmic noise.
 </p>
 
 <h3>2. Data Acquisition: The Multi-Modal Approach</h3>
@@ -212,16 +212,16 @@ To analyze the transit, I utilized data from the Helioseismic and Magnetic Image
 
 <h3>3. The Paradox: When Planets "Add" Light</h3>
 <p>
-Upon plotting the raw Intensity data from a 20-hour window, I encountered a major contradiction. According to the Magnetogram, the transit began at Hour 22:00 and ended at Hour 06:00. Yet, during this window, the solar intensity was actually rising.
+Upon plotting the raw Intensity data from a 20-hour window, I encountered a major contradiction. According to the Magnetogram, the transit began at Hour 22:00 and ended at Hour 06:00. Yet, during this window, the solar intensity plot didnt match with the magnetogram plot.
 </p>
 
 <p>
-Mathematically, a raw calculation suggested that Venus was "glowing" or adding energy to the Sun. The calculated radius ratio was nearly 500% off from the known value of Venus. This is the moment I realized that in space science, raw data is often a lie.
+Mathematically, a raw calculation suggested that Venus was "glowing" or adding energy to the Sun. The calculated radius ratio was nearly 500% off from the known value of Venus. This is the moment I realized that in space science, getting data from the instrument alone is not enough, it need to be detrended and processed to get the actual value of the observation.
 </p>
 
 <h3>4. The Hidden Variable: SDO Orbital Drift</h3>
 <p>
-The culprit behind the rising intensity was the Geosynchronous Orbit of the SDO satellite. As the satellite moves in its tilted figure-eight path above the Earth, its distance and relative velocity to the Sun change. This creates a "Diurnal Drift"—a 24-hour wave in the data.
+The reason behind the rising intensity was the Geosynchronous Orbit of the SDO satellite. As the satellite moves in its tilted figure-eight path above the Earth, its distance and relative velocity to the Sun change. This creates a "Diurnal Drift"—a 24-hour wave in the data.
 </p>
 
 <p>
