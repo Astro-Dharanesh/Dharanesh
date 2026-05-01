@@ -17,52 +17,144 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://astro-dharanesh.github.io/Dharanesh/assets/images/nightsky.jpg">
 
-    <style>
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      body { font-family: 'Poppins', sans-serif; color: #e0e0e0; overflow-x: hidden; background: black; }
-      body::before { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('assets/images/nightsky.jpg') center center / cover no-repeat; z-index: -3; opacity: 0.35; filter: brightness(0.8) saturate(1.2); }
-      body::after { content: ""; position: fixed; top: 0; left: 0; width: 200%; height: 200%; background: radial-gradient(white, rgba(255,255,255,0) 70%) repeat; background-size: 3px 3px; animation: moveStars 120s linear infinite; z-index: -2; opacity: 0.15; }
-      
-      @keyframes moveStars { from { transform: translate(0, 0); } to { transform: translate(-1000px, -1000px); } }
-      
-      header { text-align: center; padding: 100px 20px 60px; background: linear-gradient(180deg, rgba(10,10,20,0.8), rgba(0,0,0,0.9)); color: #66fcf1; }
-      header h1 { font-size: 2.5em; text-shadow: 0 0 10px #45a29e; }
-      header p { font-size: 1.2em; color: #c5c6c7; margin-top: 10px; }
-      
-      nav { text-align: center; background: rgba(0,0,0,0.8); padding: 15px 0; position: sticky; top: 0; z-index: 10; backdrop-filter: blur(6px); }
-      nav a { color: #45a29e; text-decoration: none; margin: 0 20px; font-weight: 600; transition: 0.3s; }
-      nav a:hover { color: #66fcf1; text-shadow: 0 0 10px #66fcf1; }
-      
-      section { max-width: 900px; margin: 60px auto; background: rgba(20, 20, 30, 0.7); padding: 30px; border-radius: 12px; box-shadow: 0 0 25px rgba(0,0,0,0.6); }
-      section h2 { color: #66fcf1; border-bottom: 2px solid #45a29e; padding-bottom: 10px; margin-bottom: 20px; text-align: center; }
-      section h3 { color: #66fcf1; margin-top: 25px; margin-bottom: 10px; }
-      
-      p { line-height: 1.8; margin-bottom: 15px; }
-      a { color: #45a29e; text-decoration: none; transition: 0.3s; }
-      a:hover { color: #66fcf1; text-shadow: 0 0 6px #66fcf1; }
-      
-      footer { text-align: center; padding: 40px 20px; background: rgba(10,10,20,0.95); color: #c5c6c7; margin-top: 50px; font-size: 0.9em; border-top: 1px solid rgba(102, 252, 241, 0.1); }
-      .glow { text-shadow: 0 0 10px #66fcf1; }
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Georgia&display=swap" rel="stylesheet">
 
-      .counter-wrapper {
+    <style>
+    /* LIGHT THEME (MATCHED WITH YOUR CONTACT PAGE — NO DARK MODE) */
+    :root {
+        --bg-color: #f0f2f5;
+        --text-color: black;
+        --accent-color: black;
+        --secondary-accent: teal;
+        --card-bg: #f0f2f5;
+        --nav-bg: rgba(255, 255, 255, 0.9);
+        --header-gradient: linear-gradient(180deg, #ffffff, #dfe6e9);
+        --star-opacity: 0.4;
+        --shadow: 0 4px 15px rgba(0,0,0,0.08);
+        --border-color: #d1d8e0;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        overflow-x: hidden;
+        min-height: 100vh;
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: url('assets/images/nightsky.jpg') center center / cover no-repeat;
+        z-index: -3;
+        opacity: var(--star-opacity);
+    }
+
+    header {
+        text-align: center;
+        padding: 100px 20px 60px;
+        background: var(--header-gradient);
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    header h1 {
+        font-size: 2.5em;
+        color: var(--accent-color);
+    }
+
+    header p {
+        font-size: 1.2em;
+        color: var(--secondary-accent);
+        margin-top: 10px;
+    }
+
+    nav {
+        text-align: center;
+        background: var(--nav-bg);
+        padding: 15px 0;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        backdrop-filter: blur(6px);
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    nav a {
+        color: var(--secondary-accent);
+        text-decoration: none;
+        margin: 0 20px;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    nav a:hover { color: var(--accent-color); }
+
+    section {
+        max-width: 900px;
+        margin: 60px auto;
+        background: var(--card-bg);
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        border: 1px solid var(--border-color);
+    }
+
+    section h2 {
+        color: var(--accent-color);
+        border-bottom: 2px solid var(--secondary-accent);
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    section h3 {
+        color: var(--accent-color);
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
+
+    p { line-height: 1.8; margin-bottom: 15px; }
+
+    a {
+        color: var(--accent-color);
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    footer {
+        text-align: center;
+        padding: 40px 20px;
+        color: var(--secondary-accent);
+        margin-top: 50px;
+        font-size: 0.9em;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .counter-wrapper {
         margin-top: 25px;
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 10px;
-      }
-      .counter-label {
+    }
+
+    .counter-label {
         font-size: 0.75em;
         text-transform: uppercase;
         letter-spacing: 2px;
-        color: #45a29e;
-      }
+        color: var(--secondary-accent);
+    }
     </style>
 </head>
 <body>
 
   <header>
-    <h1 class="glow">About My Journey</h1>
+    <h1>About My Journey</h1>
     <p>Mission, Vision, and Background</p>
   </header>
 
@@ -84,7 +176,7 @@
       <p>I believe that the universe is the ultimate laboratory. Through dedication to data analysis and observation, we can uncover its deepest secrets. I am committed to open science, collaborative research, and effective public outreach to share the wonder of astrophysics with the next generation.</p>
 
       <div style="text-align: center; margin-top: 40px;">
-        <a href="index.html" style="border: 1px solid #45a29e; padding: 10px 20px; border-radius: 5px;">← Back to Home (CV)</a>
+        <a href="index.html" style="border: 1px solid var(--secondary-accent); padding: 10px 20px; border-radius: 5px;">← Back to Home (CV)</a>
       </div>
     </section>
   </div>

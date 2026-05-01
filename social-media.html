@@ -3,87 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dharanesh Palaniappan | Contact Me</title>
-
-    <meta name="robots" content="index, follow">
-    <meta name="description" content="Contact information, professional links (LinkedIn, ORCID ID), GitHub, and public outreach channels (YouTube, Instagram) for Dharanesh Palaniappan.">
-    <meta name="keywords" content="Dharanesh Palaniappan, contact, email, LinkedIn, GitHub, ORCID, social media, astronomy, outreach">
-    <meta name="author" content="Dharanesh Palaniappan">
-    <meta property="og:title" content="Dharanesh Palaniappan | Contact Me">
-    <meta property="og:description" content="Contact information, professional links, and social media channels for Dharanesh Palaniappan.">
-    <meta property="og:url" content="https://astro-dharanesh.github.io/Dharanesh/social-media.html">
-    <meta property="og:image" content="https://astro-dharanesh.github.io/Dharanesh/assets/images/nightsky.jpg">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://astro-dharanesh.github.io/Dharanesh/assets/images/nightsky.jpg">
-
+    <title>Dharanesh Palaniappan | Contact</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Georgia&display=swap" rel="stylesheet">
     <style>
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      body { font-family: 'Poppins', sans-serif; color: #e0e0e0; overflow-x: hidden; background: black; }
-      body::before { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('assets/images/nightsky.jpg') center center / cover no-repeat; z-index: -3; opacity: 0.35; filter: brightness(0.8) saturate(1.2); }
-      body::after { content: ""; position: fixed; top: 0; left: 0; width: 200%; height: 200%; background: radial-gradient(white, rgba(255,255,255,0) 70%) repeat; background-size: 3px 3px; animation: moveStars 120s linear infinite; z-index: -2; opacity: 0.15; }
-      @keyframes moveStars { from { transform: translate(0, 0); } to { transform: translate(-1000px, -1000px); } }
-      header { text-align: center; padding: 100px 20px 60px; background: linear-gradient(180deg, rgba(10,10,20,0.8), rgba(0,0,0,0.9)); color: #66fcf1; }
-      header h1 { font-size: 2.5em; text-shadow: 0 0 10px #45a29e; }
-      header p { font-size: 1.2em; color: #c5c6c7; margin-top: 10px; }
-      nav { text-align: center; background: rgba(0,0,0,0.8); padding: 15px 0; position: sticky; top: 0; z-index: 10; backdrop-filter: blur(6px); }
-      nav a { color: #45a29e; text-decoration: none; margin: 0 20px; font-weight: 600; transition: 0.3s; }
-      nav a:hover { color: #66fcf1; text-shadow: 0 0 10px #66fcf1; }
-      section { max-width: 900px; margin: 60px auto; background: rgba(20, 20, 30, 0.7); padding: 30px; border-radius: 12px; box-shadow: 0 0 25px rgba(0,0,0,0.6); }
-      section h2 { color: #66fcf1; border-bottom: 2px solid #45a29e; padding-bottom: 10px; margin-bottom: 20px; text-align: center; }
-      section h3 { color: #66fcf1; margin-top: 25px; margin-bottom: 10px; }
-      section ul { margin-left: 20px; }
-      section ul li { margin-bottom: 10px; line-height: 1.6; }
-      a { color: #45a29e; transition: 0.3s; }
-      a:hover { color: #66fcf1; text-shadow: 0 0 6px #66fcf1; }
-      footer { text-align: center; padding: 25px; background: rgba(10,10,20,0.9); color: #c5c6c7; margin-top: 50px; font-size: 0.9em; }
-      .glow { text-shadow: 0 0 10px #66fcf1; }
-      
-      /* NEW STYLE FOR CONSISTENCY: Remove the default top margin for non-index pages */
-      .page-content-wrapper { 
-        max-width: 900px;
-        margin: 0 auto 60px; /* Adjusting margin to place it directly below header/nav */
-        padding-top: 60px; /* Optional: Add top padding if needed */
-      }
-      /* Ensure the section content uses the wrapper styles on non-home pages */
-      .page-content-wrapper section {
-        margin: 0 0 30px 0; /* Removing automatic vertical margins */
-      }
-    </style>
-</head>
+    /* 1. REFINED THEME VARIABLES (LIGHT THEME ONLY - UNCHANGED) */
+    :root {
+        --bg-color: #f0f2f5;
+        --text-color: black;
+        --accent-color: black;
+        --secondary-accent: teal;
+        --card-bg: #f0f2f5;
+        --nav-bg: rgba(255, 255, 255, 0.9);
+        --header-gradient: linear-gradient(180deg, #ffffff, #dfe6e9);
+        --star-opacity: 0.4;
+        --shadow: 0 4px 15px rgba(0,0,0,0.08);
+        --border-color: #d1d8e0;
+    }
+
+    /* 2. CORE STYLES */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body { 
+        font-family: 'Poppins', sans-serif; 
+        background-color: var(--bg-color); 
+        color: var(--text-color);
+        transition: all 0.4s ease;
+        min-height: 100vh;
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: url('assets/images/nightsky.jpg') center center / cover no-repeat;
+        z-index: -3;
+        opacity: var(--star-opacity);
+    }
+
+    header { 
+        text-align: center; 
+        padding: 80px 20px; 
+        background: var(--header-gradient);
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    header h1 { 
+        font-size: 2.8em; 
+        color: var(--accent-color);
+        text-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    nav { 
+        background: var(--nav-bg); 
+        padding: 15px 0; 
+        position: sticky; 
+        top: 0; 
+        z-index: 100; 
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border-color);
+        text-align: center;
+    }
+
+    nav a { 
+        color: var(--secondary-accent); 
+        text-decoration: none; 
+        margin: 0 15px; 
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    nav a:hover { color: var(--accent-color); }
+
+    .wrapper { 
+        max-width: 800px; 
+        margin: 50px auto; 
+        padding: 0 20px; 
+    }
+
+    section { 
+        background: var(--card-bg); 
+        padding: 40px; 
+        border-radius: 12px; 
+        box-shadow: var(--shadow);
+        border: 1px solid var(--border-color);
+    }
+
+    h2 { 
+        color: var(--accent-color); 
+        margin-bottom: 25px; 
+        border-bottom: 2px solid var(--secondary-accent);
+        display: inline-block;
+        padding-bottom: 5px;
+    }
+
+    ul { list-style: none; }
+    
+    li { 
+        margin-bottom: 18px; 
+        padding: 12px;
+        border-radius: 8px;
+        background: rgba(0,0,0,0.02);
+    }
+
+    li strong { color: var(--secondary-accent); }
+
+    a { 
+        color: var(--accent-color); 
+        text-decoration: none; 
+        font-weight: 500;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    footer {
+        text-align: center;
+        padding: 40px 20px;
+        color: var(--secondary-accent);
+    }
+</style>
 <body>
 
-  <header>
-    <h1 class="glow">Contact Me</h1> 
-    <p>Get in touch via email or connect through my professional and academic channels.</p>
-  </header>
+    <header>
+        <h1>Get In Touch</h1> 
+        <p>Physicist | Astronomy Researcher | Outreach</p>
+    </header>
 
-  <nav>
-    <a href="index.html">Home (CV)</a>
-    <a href="blog.html" target="_blank">Blog</a>
-    <a href="#top">Contact</a>
-    <a href="about.html" target="_blank">About</a>
-  </nav>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="social-media.html">Contact</a>
+    </nav>
 
-  <div class="page-content-wrapper">
-    <section id="top">
-      <h2>My Professional & Academic Links</h2>
-      <ul>
-        <li>📧 Email: <a href="mailto:dharaneshpalaniappan@gmail.com">dharaneshpalaniappan@gmail.com</a></li>
-        <li>🔗 LinkedIn: <a href="https://www.linkedin.com/in/dharanesh18" target="_blank">linkedin.com/in/dharanesh18</a></li>
-        <li>💻 GitHub: <a href="https://github.com/astro-dharanesh" target="_blank">astro-dharanesh</a></li>
-        <li>🆔 ORCID ID: <a href="https://orcid.org/0009-0009-3374-1650" target="_blank">Dharanesh Palaniappan</a></li>
-        <li>▶️ YouTube: <a href="https://www.youtube.com/@the_astrophile_journal" target="_blank">The Astrophile Journal</a></li>
-        <li>📸 Instagram: <a href="https://www.instagram.com/dharan_esh_?igsh=ZGMzdndkbXBjNmk2" target="_blank">dharan_esh_</a></li>
-      </ul>
-      <p style="text-align: center; margin-top: 20px;">
-        <a href="index.html">Back to Home (CV)</a>
-      </p>
-    </section>
-  </div>
-  
-  <footer>
-    © 2025 Dharanesh Palaniappan
-  </footer>
+    <div class="wrapper">
+        <section>
+            <h2>Academic & Social Links</h2>
+            <ul>
+                <li>📧 <strong>Email:</strong> <a href="mailto:dharaneshpalaniappan@gmail.com">dharaneshpalaniappan@gmail.com</a></li>
+                <li>🔗 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/dharanesh18" target="_blank">linkedin.com/in/dharanesh18</a></li>
+                <li>💻 <strong>GitHub:</strong> <a href="https://github.com/astro-dharanesh" target="_blank">github.com/astro-dharanesh</a></li>
+                <li>🆔 <strong>ORCID:</strong> <a href="https://orcid.org/0009-0009-3374-1650" target="_blank">0009-0009-3374-1650</a></li>
+                <li>▶️ <strong>YouTube:</strong> <a href="https://www.youtube.com/@the_astrophile_journal" target="_blank">The Astrophile Journal</a></li>
+            </ul>
+        </section>
+    </div>
+    
+    <footer>
+        © 2026 DHARANESH PALANIAPPAN
+    </footer>
+
 </body>
 </html>
