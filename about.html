@@ -20,7 +20,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Georgia&display=swap" rel="stylesheet">
 
     <style>
-    /* LIGHT THEME (MATCHED WITH YOUR CONTACT PAGE — NO DARK MODE) */
     :root {
         --bg-color: #f0f2f5;
         --text-color: black;
@@ -77,20 +76,67 @@
         padding: 15px 0;
         position: sticky;
         top: 0;
-        z-index: 10;
+        z-index: 1000;
         backdrop-filter: blur(6px);
         border-bottom: 1px solid var(--border-color);
     }
 
-    nav a {
-        color: var(--secondary-accent);
-        text-decoration: none;
-        margin: 0 20px;
-        font-weight: 600;
-        transition: 0.3s;
+    /* Dropdown Section */
+    .dropdown {
+        position: relative;
+        display: inline-block;
     }
 
-    nav a:hover { color: var(--accent-color); }
+    .dropbtn {
+        background: transparent;
+        color: var(--secondary-accent);
+        padding: 8px 20px;
+        font-size: 16px;
+        font-weight: 600;
+        border: 2px solid var(--secondary-accent);
+        border-radius: 8px;
+        cursor: pointer;
+        font-family: 'Poppins', sans-serif;
+        transition: 0.3s ease;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: white;
+        min-width: 160px;
+        box-shadow: var(--shadow);
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+        margin-top: 10px;
+        overflow: hidden;
+    }
+
+    .dropdown-content a {
+        color: var(--secondary-accent);
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-weight: 600;
+        text-align: left;
+        margin: 0; /* Reset margins for dropdown links */
+    }
+
+    .dropdown-content a:hover {
+        background-color: var(--secondary-accent);
+        color: white;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background: var(--secondary-accent);
+        color: white;
+    }
 
     section {
         max-width: 900px;
@@ -159,10 +205,15 @@
   </header>
 
   <nav>
-    <a href="index.html">Home (CV)</a>
-    <a href="blog.html">Blog</a>
-    <a href="social-media.html">Contact</a>
-    <a href="#top">About</a>
+    <div class="dropdown">
+      <button class="dropbtn">Menu ▾</button>
+      <div class="dropdown-content">
+        <a href="index.html">Home (CV)</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="social-media.html">Contact</a>
+      </div>
+    </div>
   </nav>
 
   <div class="page-content-wrapper">
