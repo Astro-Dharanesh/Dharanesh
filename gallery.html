@@ -18,15 +18,17 @@
       --nav-bg: #ffffff;
       --border-color: #ddd;
       --accent-color: #0056b3;
+      --shadow: 0 4px 14px rgba(0,0,0,0.1);
     }
 
     [data-theme="dark"] {
-      --bg-color: #0b0e14; /* Deep space dark */
+      --bg-color: #0b0e14; 
       --text-color: #e0e0e0;
       --card-bg: #161b22;
       --nav-bg: #0b0e14;
       --border-color: #30363d;
       --accent-color: #58a6ff;
+      --shadow: 0 4px 14px rgba(0,0,0,0.4);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; transition: background 0.3s, color 0.3s; }
@@ -44,6 +46,8 @@
       padding: 60px 20px 40px;
       text-align: center;
     }
+
+    header h1 { font-size: 2.4em; margin-bottom: 8px; }
 
     nav {
       background: var(--nav-bg);
@@ -66,26 +70,69 @@
       font-size: 14px;
       font-weight: bold;
       margin-left: 15px;
+      font-family: Arial, sans-serif;
     }
 
-    /* Dropdown Style */
-    .dropdown { position: relative; display: inline-block; }
+    /* Dropdown Section */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
     .dropbtn {
-      background: transparent; color: var(--accent-color); padding: 8px 20px;
-      font-size: 16px; font-weight: 600; border: 2px solid var(--accent-color);
-      border-radius: 6px; cursor: pointer; font-family: Arial, sans-serif;
+      background: transparent;
+      color: var(--accent-color);
+      padding: 8px 20px;
+      font-size: 16px;
+      font-weight: 600;
+      border: 2px solid var(--accent-color);
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+      transition: 0.3s ease;
     }
+
     .dropdown-content {
-      display: none; position: absolute; left: 50%; transform: translateX(-50%);
-      background-color: var(--card-bg); min-width: 180px; box-shadow: 0 4px 14px rgba(0,0,0,0.2);
-      border-radius: 8px; border: 1px solid var(--border-color); margin-top: 10px; overflow: hidden;
+      display: none;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--card-bg);
+      min-width: 180px;
+      box-shadow: var(--shadow);
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      
+      /* THE FIX: Remove margin-top and use top + padding to bridge the gap */
+      top: 100%; 
+      padding-top: 5px; 
+      overflow: hidden;
+      z-index: 1010;
     }
+
     .dropdown-content a {
-      color: var(--accent-color); padding: 12px 16px; text-decoration: none;
-      display: block; font-weight: 600; text-align: left; font-family: Arial, sans-serif;
+      color: var(--accent-color);
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-weight: 600;
+      text-align: left;
+      font-family: Arial, sans-serif;
     }
-    .dropdown-content a:hover { background-color: rgba(128, 128, 128, 0.1); }
-    .dropdown:hover .dropdown-content { display: block; }
+
+    .dropdown-content a:hover {
+      background-color: rgba(128, 128, 128, 0.1);
+      text-decoration: underline;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+      background: var(--accent-color);
+      color: white;
+    }
 
     /* Gallery Grid */
     .container {
@@ -139,7 +186,7 @@
     }
   </style>
 </head>
-<body data-theme="dark"> <!-- Defaults to Dark Mode for better Astro viewing -->
+<body data-theme="dark"> 
 
 <header>
   <h1>Visual Journal</h1>
@@ -162,7 +209,6 @@
 
 <main class="container">
   <div class="gallery-grid">
-    <!-- Image Item Loop -->
     <div class="gallery-item"><img src="Gallery/1.jpeg" alt="Astro"><div class="caption">Orion</div></div>
     <div class="gallery-item"><img src="Gallery/2.jpeg" alt="Astro"><div class="caption">Jupiter and its moons</div></div>
     <div class="gallery-item"><img src="Gallery/5.jpeg" alt="Astro"><div class="caption">Saturn</div></div>
