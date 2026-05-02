@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Dharanesh Palaniappan</title>
+
+  <!-- Primary SEO -->
+  <meta name="description" content="A collection of astronomical observations and research images by Dharanesh Palaniappan.">
+  <meta name="author" content="Dharanesh Palaniappan">
+
+  <style>
+    /* 1. THEME VARIABLES */
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #1f1f1f;
+      --card-bg: #ffffff;
+      --nav-bg: #ffffff;
+      --border-color: #ddd;
+      --accent-color: #0056b3;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #0b0e14; /* Deep space dark */
+      --text-color: #e0e0e0;
+      --card-bg: #161b22;
+      --nav-bg: #0b0e14;
+      --border-color: #30363d;
+      --accent-color: #58a6ff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; transition: background 0.3s, color 0.3s; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--nav-bg);
+      border-bottom: 1px solid var(--border-color);
+      padding: 60px 20px 40px;
+      text-align: center;
+    }
+
+    nav {
+      background: var(--nav-bg);
+      border-bottom: 1px solid var(--border-color);
+      padding: 15px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    /* Toggle Button */
+    #theme-toggle {
+      background: var(--accent-color);
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      margin-left: 15px;
+    }
+
+    /* Dropdown Style */
+    .dropdown { position: relative; display: inline-block; }
+    .dropbtn {
+      background: transparent; color: var(--accent-color); padding: 8px 20px;
+      font-size: 16px; font-weight: 600; border: 2px solid var(--accent-color);
+      border-radius: 6px; cursor: pointer; font-family: Arial, sans-serif;
+    }
+    .dropdown-content {
+      display: none; position: absolute; left: 50%; transform: translateX(-50%);
+      background-color: var(--card-bg); min-width: 180px; box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+      border-radius: 8px; border: 1px solid var(--border-color); margin-top: 10px; overflow: hidden;
+    }
+    .dropdown-content a {
+      color: var(--accent-color); padding: 12px 16px; text-decoration: none;
+      display: block; font-weight: 600; text-align: left; font-family: Arial, sans-serif;
+    }
+    .dropdown-content a:hover { background-color: rgba(128, 128, 128, 0.1); }
+    .dropdown:hover .dropdown-content { display: block; }
+
+    /* Gallery Grid */
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .gallery-item {
+      background: var(--card-bg);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      border: 1px solid var(--border-color);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.9);
+      transition: filter 0.3s;
+    }
+
+    .gallery-item:hover img {
+      filter: brightness(1.1);
+    }
+
+    .caption {
+      padding: 15px;
+      font-size: 0.9em;
+      text-align: center;
+      color: var(--text-color);
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      margin-top: 50px;
+      color: #666;
+    }
+  </style>
+</head>
+<body data-theme="dark"> <!-- Defaults to Dark Mode for better Astro viewing -->
+
+<header>
+  <h1>Visual Journal</h1>
+  <p>Exploring the Universe through the Lens</p>
+</header>
+
+<nav>
+  <div class="dropdown">
+    <button class="dropbtn">Menu ▾</button>
+    <div class="dropdown-content">
+      <a href="index.html">Home</a>
+      <a href="blog.html">Blog</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="social-media.html">Contact</a>
+    </div>
+  </div>
+  <button id="theme-toggle">☀️ Switch Mode</button>
+</nav>
+
+<main class="container">
+  <div class="gallery-grid">
+    <!-- Image Item Loop -->
+    <div class="gallery-item"><img src="Gallery/1.jpeg" alt="Astro"><div class="caption">Orion</div></div>
+    <div class="gallery-item"><img src="Gallery/2.jpeg" alt="Astro"><div class="caption">Jupiter and its moons</div></div>
+    <div class="gallery-item"><img src="Gallery/5.jpeg" alt="Astro"><div class="caption">Saturn</div></div>
+    <div class="gallery-item"><img src="Gallery/6.jpeg" alt="Astro"><div class="caption">Nightsky</div></div>
+    <div class="gallery-item"><img src="Gallery/7.jpeg" alt="Astro"><div class="caption">Jupiter</div></div>
+    <div class="gallery-item"><img src="Gallery/8.jpeg" alt="Astro"><div class="caption">Nightsky</div></div>
+    <div class="gallery-item"><img src="Gallery/9.jpeg" alt="Astro"><div class="caption">Optical Mimicry - Blackhole</div></div>
+    <div class="gallery-item"><img src="Gallery/10.jpeg" alt="Astro"><div class="caption">Lunar Eclipse</div></div>
+    <div class="gallery-item"><img src="Gallery/11.jpeg" alt="Astro"><div class="caption">Sunspots</div></div>
+    <div class="gallery-item"><img src="Gallery/12.jpeg" alt="Astro"><div class="caption">Nightsky</div></div>
+    <div class="gallery-item"><img src="Gallery/13.jpeg" alt="Astro"><div class="caption">Sunspots</div></div>
+    <div class="gallery-item"><img src="Gallery/14.jpeg" alt="Astro"><div class="caption">Raman Scattering</div></div>
+  </div>
+</main>
+
+<footer>
+  © 2026 Dharanesh Palaniappan
+</footer>
+
+<script>
+  const toggleBtn = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  toggleBtn.addEventListener('click', () => {
+    if (body.getAttribute('data-theme') === 'dark') {
+      body.setAttribute('data-theme', 'light');
+      toggleBtn.textContent = '🌙 Switch Mode';
+    } else {
+      body.setAttribute('data-theme', 'dark');
+      toggleBtn.textContent = '☀️ Switch Mode';
+    }
+  });
+</script>
+
+</body>
+</html>
