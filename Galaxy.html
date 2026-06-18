@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Galactic Astrophysics Workshop Reflection | Dharanesh Palaniappan</title>
+  <meta name="description" content="A reflection on my experience at the IUCAA-sponsored workshop on Galactic Astrophysics, including hands-on experience with DS9 and multi-wavelength galaxy analysis.">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #f8f9fa;
+      color: #1f1f1f;
+      line-height: 1.9;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #ddd;
+      padding: 60px 20px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      color: #666;
+      font-size: 1.05em;
+    }
+
+    nav {
+      background: #ffffff;
+      border-bottom: 1px solid #ddd;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #0056b3;
+      margin: 0 18px;
+      font-weight: 600;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    article {
+      background: #ffffff;
+      padding: 55px;
+      border-radius: 6px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+    }
+
+    article h2 {
+      font-size: 2.3em;
+      margin-bottom: 12px;
+    }
+
+    .post-meta {
+      font-size: 0.95em;
+      color: #777;
+      margin-bottom: 35px;
+    }
+
+    article h3 {
+      margin-top: 45px;
+      margin-bottom: 14px;
+      font-size: 1.45em;
+    }
+
+    article p {
+      margin-bottom: 22px;
+      font-size: 1.05em;
+      text-align: justify;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0;
+      font-size: 0.95em;
+    }
+
+    table th, table td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    table th {
+      background: #eef2f6;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #ffffff;
+      border-top: 1px solid #ddd;
+      text-align: center;
+      padding: 30px;
+      color: #666;
+      font-size: 0.9em;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>The Astrophile Journal</h1>
+  <p>Research, Data Analysis & Scientific Writing</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="blog.html">Blog</a>
+  <a href="about.html">About</a>
+  <a href="social-media.html">Contact</a>
+</nav>
+
+<main class="container">
+<article>
+
+<h2>Exploring the Universe: My Experience at the Galactic Astrophysics Workshop</h2>
+
+<div class="post-meta">
+  By Dharanesh Palaniappan<br>
+  <strong>Keywords:</strong> Galactic Astrophysics, IUCAA, DS9, Multi-wavelength Analysis
+</div>
+
+<p>Hello friends,</p>
+
+<p>
+Recently, I attended a three-day IUCAA-sponsored workshop on Galactic Astrophysics at Nirmala College, Muvattupuzha, from 12–14 June 2026. Currently, I am exploring various domains within Astrophysics. Previously, I had some experiences in Asteroids, Exoplanets, Solar physics and currently this workshop helped me to explore galactic astrophysics as well. I really enjoyed these three days, and I especially loved the trip from Chennai to Kerala, as it was my first time visiting the state. The journey from Chennai to Kerala was fantastic. The climate and scenery were beautiful, and I understood why people call Kerala "God's Own Country". Coming to the workshop part, it was really helpful for me, and the lectures by the professors were very useful and thoughtful. In particular, I really enjoyed the hands-on session where we used the DS9 software to learn how to find the size of the galaxies.
+</p>
+
+<figure style="margin: 30px 0; text-align: center;">
+  <img src="Gallery/galaxy.png" alt="Galaxy FITS image visualization" style="max-width: 100%; height: auto; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <figcaption style="margin-top: 10px; font-size: 0.9em; color: #666; font-style: italic;">
+    Visualization of galaxy data using DS9.
+  </figcaption>
+</figure>
+
+<h3>The Power of Visualization: Working with DS9</h3>
+<p>
+Let us see more about that. For this hands-on session, we used the DS9 Image Viewer, which is a widely used tool for visualizing and assessing the FITS images. At first, everything felt a bit difficult to follow, but as time went on, everything felt very easy, and I found it really interesting, particularly the visualization of the galaxies in the FITS image we got, which really made me enthusiastic. Even though we have seen pictures of the galaxies on the internet, seeing the actual data with our own hands was really a wonderful experience. Basically, what we did was really a beginner-level basic project, where we use the DS9 software to view the fit image containing galaxies, for that we used the image captured by the UVIT, HST and the JWST instruments. We use the image taken in the same part of the sky but using different telescopes. Some people might wonder what the difference is between these instruments because all these instruments take the same part of the sky, and what difference it will make, but the truth is, this is where the real physics is hiding. Basically, these instruments capture the different wavelengths of the electromagnetic spectrum emitted by the source; in our case, it is galaxies. Usually, these galaxies show distinct features on different wavelengths.
+</p>
+
+<table>
+<tr><th>Instrument</th><th>Spectrum Captured</th><th>Key Features Observed</th></tr>
+<tr><td>UVIT</td><td>Far and Near UV</td><td>Young massive stars, star-forming regions, starburst activity</td></tr>
+<tr><td>HST</td><td>UV, Visible, Near-IR</td><td>Spiral arms, dust lanes, stellar populations, morphology</td></tr>
+<tr><td>JWST</td><td>Near and Mid IR</td><td>Cold dust, molecular clouds, AGN, high-redshift galaxies</td></tr>
+</table>
+
+<figure style="margin: 30px 0; text-align: center;">
+  <img src="Gallery/growth.png" alt="Growth curve plot of the observed galaxy" style="max-width: 100%; height: auto; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <figcaption style="margin-top: 10px; font-size: 0.9em; color: #666; font-style: italic;">
+    Growth curve plot used to determine the galaxy's radius.
+  </figcaption>
+</figure>
+
+<p>
+Basically, it is taking scans in hospitals. I was primarily interested in the HST image, and I analyzed the HST image. I saw a wonderful scenario where I was able to see multiple galaxies within a few areas, and I could also see galaxies with different morphologies like spiral galaxies, elliptical galaxies and so on. For my analysis, I chose a spiral galaxy with a face-on view. In this analysis, the galaxy was fitted within an elliptical boundary. And then we used the RA and DEC, the ellipticity of the boundary we used and the position angle of the boundary, the background pixel value to calculate the size of the galaxy in arcseconds by the growth curve plot, which plots the semi major axis vs cumulative fluc subtracted from the background value.
+</p>
+
+<h3>Analysis and Results</h3>
+<p>
+So, we were able to find that the size of the galaxy we observed was 2.4 arcsec in radius. In this plot, basically, it plots the semi major axis with the cumulative flux so that once the galaxy edge is reached, the curve becomes saturated, hence we can say this as the approximate radius of the galaxy. Here, the 2.4 arcsec is only the size of the galaxy we measured in the image. Physically, we can't predict the actual size because a galaxy of the same size might be very far away and appear small and some might be close, which appear big. For that, using the redshift of the galaxy, we can find the actual size of the galaxy. We were also given the catalogue containing the redshift value of the galaxies. Then, with the help of the cosmological calculator available on the internet to find some actual parameters of the galaxy. So first and foremost, coming to the physical size by using the redshift value and the cosmology calculator for an object to be redshifted at a rate of 0.5328 for every 1 arcsecond of angular size of the galaxy spans on our detector, its actual physical size is 6.379 kiloparsecs/ arcsecond, so we found our galaxy width to be 2.4 arcseconds. By multiplying the scale value and the size in arcseconds, we observed the size of the galaxy to be 15.3096 kpc in radius, which is about ~ 30.6192 kpc in diameter. And with some formulation, I calculate the apparent magnitude of the object to be ~21.06 and the absolute magnitude of ~ -21.39. These values suggest that this galaxy is approximately the same size as our Milky Way galaxy and slightly brighter than our Milky Way galaxy.
+</p>
+
+<h3>Conclusion</h3>
+<p>
+Finally, from this workshop I were able to learn many useful things which really helped me in refining my career in Astronomy, and I was able to learn a lot of new information like processing the FITS file and getting physical values for the file. I really thank everyone who made this workshop possible.
+</p>
+
+</article>
+</main>
+
+<footer>
+© 2026 Dharanesh Palaniappan
+</footer>
+
+</body>
+</html>
