@@ -3,25 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dharanesh Palaniappan | Astronomy Portfolio & Journey</title>
 
-  <!-- Primary SEO -->
-  <title>Dharanesh Palaniappan | Astronomy Portfolio</title>
-  <meta name="description" content="Official research portfolio of Dharanesh Palaniappan — Physics graduate specializing in astrophysics, exoplanets, heliophysics, and observational astronomy.">
-  <meta name="keywords" content="Dharanesh Palaniappan, astrophysics, astronomy, exoplanets, heliophysics, observational astronomy, telescope, research portfolio">
-  <meta name="author" content="Dharanesh Palaniappan">
+  <!-- SEO Meta -->
   <meta name="robots" content="index, follow">
+  <meta name="description" content="Official research portfolio and journey of Dharanesh Palaniappan — Physics graduate specializing in astrophysics, exoplanets, heliophysics, and observational astronomy.">
+  <meta name="keywords" content="Dharanesh Palaniappan, astrophysics, astronomy, exoplanets, heliophysics, observational astronomy, telescope, research portfolio, MCC, space science, IASC, MASS, infrared, optical telescope">
+  <meta name="author" content="Dharanesh Palaniappan">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Dharanesh Palaniappan | Astronomy Portfolio">
-  <meta property="og:description" content="Research portfolio showcasing astrophysics projects and observational work.">
-  <meta property="og:image" content="https://astro-dharanesh.github.io/Dharanesh/assets/images/profile.jpeg">
+  <meta property="og:description" content="Official research portfolio and journey of Dharanesh Palaniappan — Physics graduate specializing in astrophysics and observational astronomy.">
   <meta property="og:url" content="https://astro-dharanesh.github.io/Dharanesh/">
+  <meta property="og:image" content="https://astro-dharanesh.github.io/Dharanesh/assets/images/profile.jpeg">
   <meta property="og:type" content="website">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Dharanesh Palaniappan | Astronomy Portfolio">
-  <meta name="twitter:description" content="Astrophysics research portfolio and projects.">
+  <meta name="twitter:description" content="Astrophysics research portfolio and personal journey.">
   <meta name="twitter:image" content="https://astro-dharanesh.github.io/Dharanesh/assets/images/profile.jpeg">
 
   <!-- Canonical -->
@@ -30,164 +30,190 @@
   <!-- Favicon -->
   <link rel="icon" href="assets/images/favicon.png" type="image/png">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
   <!-- Styles -->
   <style>
-    :root {
-        --bg-color: #f7f9fc;
-        --text-color: #1a1a1a;
-        --accent-color: #2c3e50;
-        --secondary-accent: #3a7bd5;
-        --card-bg: #ffffff;
-        --nav-bg: rgba(255, 255, 255, 0.95);
-        --header-gradient: linear-gradient(135deg, #2c3e50, #3a7bd5);
-        --shadow: 0 6px 18px rgba(0,0,0,0.08);
-        --border-color: #e1e8ed;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
-        font-family: 'Poppins', sans-serif;
-        background-color: var(--bg-color);
-        color: var(--text-color);
+      font-family: Georgia, "Times New Roman", serif;
+      background: #f8f9fa;
+      color: #1f1f1f;
+      line-height: 1.85;
     }
 
     header {
-        text-align: center;
-        padding: 80px 20px;
-        background: var(--header-gradient);
-        color: white;
+      background: white;
+      border-bottom: 1px solid #ddd;
+      padding: 60px 20px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.4em;
+      margin-bottom: 8px;
+      color: #1f1f1f;
+    }
+
+    header p {
+      color: #666;
+      font-size: 1.05em;
     }
 
     nav {
-        text-align: center;
-        padding: 15px;
-        background: var(--nav-bg);
-        border-bottom: 1px solid var(--border-color);
-        position: sticky;
-        top: 0;
-        z-index: 1000;
+      background: white;
+      border-bottom: 1px solid #ddd;
+      padding: 15px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
-    /* Dropdown Section */
-    .dropdown {
-        position: relative;
-        display: inline-block;
+    /* Horizontal Navigation Bar */
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      list-style: none;
     }
 
-    .dropbtn {
-        background: transparent;
-        color: var(--secondary-accent);
-        padding: 8px 20px;
-        font-size: 16px;
-        font-weight: 600;
-        border: 2px solid var(--secondary-accent);
-        border-radius: 8px;
-        cursor: pointer;
-        font-family: 'Poppins', sans-serif;
-        transition: 0.3s ease;
+    .nav-links a {
+      color: #333333;
+      padding: 8px 12px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      transition: color 0.3s ease;
     }
 
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: var(--card-bg);
-        min-width: 160px;
-        box-shadow: var(--shadow);
-        border-radius: 12px;
-        border: 1px solid var(--border-color);
-        margin-top: 10px;
-        overflow: hidden;
-    }
-
-    .dropdown-content a {
-        color: var(--secondary-accent);
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        font-weight: 600;
-        text-align: left;
-    }
-
-    .dropdown-content a:hover {
-        background-color: var(--secondary-accent);
-        color: white;
-    }
-
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-
-    .dropdown:hover .dropbtn {
-        background: var(--secondary-accent);
-        color: white;
+    .nav-links a:hover {
+      color: #000000;
+      text-decoration: underline;
     }
 
     .container {
-        max-width: 1000px;
-        margin: 40px auto;
-        padding: 0 20px;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
 
     section {
-        background: var(--card-bg);
-        padding: 30px;
-        margin-bottom: 30px;
-        border-radius: 16px;
-        box-shadow: var(--shadow);
-        border: 1px solid var(--border-color);
+      background: white;
+      padding: 35px;
+      margin-bottom: 30px;
+      border-radius: 6px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+      border: 1px solid #ddd;
     }
 
     h2 {
-        margin-bottom: 20px;
-        border-bottom: 3px solid var(--secondary-accent);
-        display: inline-block;
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #1f1f1f;
+      display: inline-block;
+      padding-bottom: 5px;
+      color: #1f1f1f;
     }
 
     .profile {
-        display: flex;
-        gap: 30px;
-        align-items: center;
-        flex-wrap: wrap;
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      flex-wrap: wrap;
     }
 
     .profile img {
-        width: 180px;
-        height: 180px;
-        object-fit: cover;
-        border-radius: 50%;
-        border: 3px solid var(--secondary-accent);
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid #1f1f1f;
     }
 
     .profile-text {
-        flex: 1;
+      flex: 1;
+    }
+
+    .profile-text p {
+      margin-bottom: 10px;
+      font-size: 1.05em;
+    }
+
+    section p {
+      font-size: 1.05em;
+      margin-bottom: 15px;
+      text-align: justify;
+    }
+
+    section ul {
+      padding-left: 20px;
+      margin-bottom: 10px;
+    }
+
+    section li {
+      margin-bottom: 10px;
+      font-size: 1.05em;
+    }
+
+    a {
+      color: #1f1f1f;
+      text-decoration: underline;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      color: #666;
     }
 
     .btn {
-        display: inline-block;
-        margin-top: 15px;
-        padding: 10px 18px;
-        border-radius: 8px;
-        background: var(--secondary-accent);
-        color: white;
-        text-decoration: none;
-        font-weight: 500;
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      background: #1f1f1f;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-family: Arial, sans-serif;
+      border: 1px solid #1f1f1f;
+      transition: background 0.3s ease, color 0.3s ease;
     }
 
     .btn:hover {
-        background: var(--accent-color);
+      background: white;
+      color: #1f1f1f;
+      text-decoration: none;
     }
 
     footer {
-        text-align: center;
-        padding: 30px;
-        color: var(--secondary-accent);
-        border-top: 1px solid var(--border-color);
+      background: white;
+      text-align: center;
+      padding: 30px;
+      color: #666;
+      font-size: 0.9em;
+      border-top: 1px solid #ddd;
+    }
+
+    .counter-wrapper {
+      margin-top: 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .counter-label {
+      font-size: 0.75em;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #666;
     }
   </style>
 </head>
@@ -200,64 +226,69 @@
 </header>
 
 <nav>
-  <div class="dropdown">
-    <button class="dropbtn">Menu ▾</button>
-    <div class="dropdown-content">
-      <a href="index.html">Home</a>
-      <a href="blog.html">Blog</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="about.html">About</a>
-      <a href="social-media.html">Contact</a>
-      <a href="tools.html">Tools</a>
-    </div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="blog.html">Blog</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About</a>
+    <a href="social-media.html">Contact</a>
+    <a href="tools.html">Tools</a>
   </div>
 </nav>
 
 <div class="container">
 
-<section>
-  <div class="profile">
-    <img src="profile.jpeg" alt="Dharanesh Photo">
-
-    <div class="profile-text">
-      <h2>Hi, I'm Dharanesh Palaniappan</h2>
-      <p>Physics graduate focused on observational and data driven astronomy.</p>
-      <p>Interested in pursuing research in astrophysics. Currently, working on Heliophysics.</p>
+  <!-- Profile Section -->
+  <section>
+    <div class="profile">
+      <img src="profile.jpeg" alt="Dharanesh Photo">
+      <div class="profile-text">
+        <h2>Hi, I'm Dharanesh Palaniappan</h2>
+        <p>Physics graduate focused on observational and data driven astronomy.</p>
+        <p>Interested in pursuing research in astrophysics. Currently, working on Heliophysics.</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <h2>Featured Work</h2>
-  <ul>
-    <li><strong>Asteroid 2021 CP66 Analysis</strong> – <a href="https://arxiv.org/pdf/2506.02963" target="_blank">View Paper</a></li>
-    <li><strong>Solar Active Region Study</strong> – (ongoing)</li>
-  </ul>
-</section>
+  <!-- Journey Section -->
+  <section>
+    <h2>The Journey into Astrophysics</h2>
+    <p>My interest in astronomy began with a simple curiosity about the night sky, which quickly evolved into a rigorous pursuit of physics. <strong>“Somewhere, something incredible is waiting to be known.”</strong> These words reflect something deeply personal: my constant urge to ask why and my growing admiration for the universe’s mysteries.</p>
 
-<section>
-  <h2>Research Focus</h2>
-  <ul>
-    <li>Observational Astronomy </li>
-    <li>Solar Physics </li>
-    <li>Astronomy Instrumentation </li>
-    <li>Planetary Science </li>
-    <li>Committed to learn new domains too </li>
+    <p>Dr. Abdul Kalam's contribution to India's development in space technology and his journey from a humble background to becoming a great scientist and leader has profoundly inspired me. My current interests lie in <strong>Heliophysics, Astronomical Instrumentation, Planetary Science and Observational Astronomy</strong>. My journey so far has been shaped by curiosity and hands-on learning. I believe my path in Physics will not only deepen my knowledge but also help me contribute meaningfully to the scientific community as a researcher. I’m excited to move towards my dream of working in space science.</p>
+  </section>
 
-
-  </ul>
-</section>
-
-<section>
-  <h2>Download CV</h2>
-  <p>You can view or download my full CV here:</p>
-  <a href="Dharanesh_CV.pdf" class="btn" target="_blank">Download CV</a>
-</section>
+  <!-- Featured Work Section -->
+  <section>
+    <h2>Featured Work</h2>
+    <ul>
+      <li><strong>Asteroid 2021 CP66 Analysis</strong> – <a href="https://arxiv.org/pdf/2506.02963" target="_blank">View Paper</a></li>
+      <li><strong>Solar Active Region Study</strong> – (ongoing)</li>
+    </ul>
+ 
+  <!-- CV Download Section -->
+  <section>
+    <h2>Download CV</h2>
+    <p>You can view or download my full CV here:</p>
+    <a href="Dharanesh_CV.pdf" class="btn" target="_blank">Download CV</a>
+  </section>
 
 </div>
 
 <footer>
-  © 2026 Dharanesh Palaniappan
+  <p>© 2026 Dharanesh Palaniappan</p>
+
+  <div class="counter-wrapper">
+    <span class="counter-label">Visitor Count</span>
+
+    <div id="sfcqnwcpc375epdxqdhn4udbeujm81cyx58"></div>
+    <script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=qnwcpc375epdxqdhn4udbeujm81cyx58&down=async" async></script>
+    <noscript>
+      <a href="https://www.freecounterstat.com" title="website counter">
+        <img src="https://counter1.optistats.ovh/private/freecounterstat.php?c=qnwcpc375epdxqdhn4udbeujm81cyx58" border="0" title="website counter" alt="website counter">
+      </a>
+    </noscript>
+  </div>
 </footer>
 
 </body>
