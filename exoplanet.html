@@ -1,0 +1,927 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A comprehensive analysis of 501 TESS stars and their exoplanetary systems using Lightkurve and archival astronomical data.">
+<title>Exploring Exoplanets | The Astrophile Journal</title>
+
+<style>
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background-color: #f8f9fa;
+    color: #1f1f1f;
+    margin: 0;
+    padding: 0;
+    line-height: 1.9;
+}
+
+header {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 30px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    margin: 8px 0 0;
+}
+
+nav {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+nav a {
+    color: #0056b3;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+article {
+    background-color: #ffffff;
+    padding: 55px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+article h2 {
+    font-size: 2.3em;
+    line-height: 1.3;
+    margin-top: 35px;
+}
+
+.post-meta {
+    color: #777;
+    margin-bottom: 30px;
+}
+
+article h3 {
+    margin-top: 35px;
+}
+
+article p {
+    text-align: justify;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 9px;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background-color: #eef2f6;
+}
+
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    margin: 25px 0;
+}
+
+.table-wrap table {
+    min-width: 900px;
+}
+
+.table-note {
+    color: #666;
+    font-size: 0.85em;
+    margin-top: -15px;
+}
+
+figure {
+    margin: 30px 0;
+    text-align: center;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+}
+
+figcaption {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 10px;
+}
+
+.image-placeholder {
+    background: #edf1f5;
+    border: 1px dashed #9eacba;
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #647487;
+    padding: 20px;
+}
+
+.results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.result-card {
+    background: #f3f6f9;
+    border: 1px solid #dce3eb;
+    border-radius: 6px;
+    padding: 20px;
+    text-align: center;
+}
+
+.result-card strong {
+    display: block;
+    font-size: 2em;
+    color: #1f1f1f;
+}
+
+.result-card span {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.callout {
+    background: #f5f7fa;
+    border-left: 4px solid #245b85;
+    padding: 16px 20px;
+    margin: 25px 0;
+}
+
+footer {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid #ddd;
+    margin-top: 40px;
+}
+
+footer p {
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    article {
+        padding: 25px;
+    }
+
+    article h2 {
+        font-size: 1.8em;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px 7px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>The Astrophile Journal</h1>
+    <p>Research, Data Analysis &amp; Scientific Writing</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="blog.html">Blog</a>
+    <a href="about.html">About</a>
+    <a href="social-media.html">Social Media</a>
+</nav>
+
+<main class="container">
+<article>
+
+<h2>Exploring Exoplanets: Analysing 501 TESS Stars Using Lightkurve and Archival Data</h2>
+
+<div class="post-meta">
+    By Dharanesh Palaniappan | Research in Observational Astronomy | 2026
+</div>
+
+<p>Hello friends,</p>
+
+<p>
+The discovery of planets beyond our Solar System has transformed our understanding
+of planetary systems and their diversity. With thousands of confirmed exoplanets
+now available in astronomical archives, studying their properties and the
+characteristics of their host stars provides an opportunity to investigate how
+planetary systems form, evolve and differ from one another.
+</p>
+
+<p>
+In this project, I worked with data from the Transiting Exoplanet Survey Satellite
+(TESS), using the Python package Lightkurve to examine stellar light curves and
+search for transit-like signals. I also compared the selected stars with existing
+astronomical databases to identify known exoplanets, TESS Objects of Interest
+(TOIs), and variable stars.
+</p>
+
+<p>
+Alongside the photometric analysis, I compiled planetary and orbital parameters
+and calculated additional physical quantities to investigate the properties of
+the selected planetary systems.
+</p>
+
+<h3>1. Introduction</h3>
+
+<p>
+The discovery of the first extrasolar planets around a pulsar system in 1992
+(Wolszczan &amp; Frail, 1992), followed by the discovery of 51 Pegasi b around a
+Sun-like star in 1995 (Mayor &amp; Queloz, 1995), marked important milestones in
+modern astronomy.
+</p>
+
+<p>
+Among the different techniques used to detect exoplanets, the transit method is
+one of the most widely used. When a planet passes in front of its host star,
+as observed from Earth, a small reduction in the measured stellar brightness
+occurs. This reduction appears as a dip in a light curve.
+</p>
+
+<p>
+The transit depth, orbital period and duration of the signal can provide
+information about the planetary system. Space missions such as Kepler and TESS
+have made it possible to observe large numbers of stars and identify potential
+planetary systems through high-precision photometry.
+</p>
+
+<p>
+The objective of this project was to examine a selected sample of TESS stars,
+analyse their photometric light curves, compare the results with established
+exoplanet catalogues and investigate the physical properties of the associated
+planetary systems.
+</p>
+
+<h3>2. Data and Sample Selection</h3>
+
+<p>
+For this study, I used the TESS Candidate Target List (CTL) version 8.01,
+obtained from the Mikulski Archive for Space Telescopes (MAST). The catalogue
+contains stellar information for a large number of targets observed or selected
+for TESS observations.
+</p>
+
+<p>
+From this catalogue, approximately 500–501 stars were selected using a set of
+stellar parameters. The selection was intended to focus on a relatively
+restricted range of stellar properties for the subsequent analysis.
+</p>
+
+<h3>2.1 Stellar selection criteria</h3>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+    <th>Stellar parameter</th>
+    <th>Selected range</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Effective temperature (K)</td><td>3500–5500</td></tr>
+<tr><td>Surface gravity, log g</td><td>4–5</td></tr>
+<tr><td>Metallicity</td><td>−0.3 to +0.5</td></tr>
+<tr><td>Stellar radius (R☉)</td><td>0.5–1.5</td></tr>
+<tr><td>Stellar mass (M☉)</td><td>0.5–1.5</td></tr>
+<tr><td>Distance</td><td>1–50</td></tr>
+<tr><td>TESS magnitude</td><td>8–10.5</td></tr>
+<tr><td>Visual magnitude</td><td>0.3332–14</td></tr>
+<tr><td>Contamination ratio</td><td>0–0.05</td></tr>
+</tbody>
+</table>
+</div>
+
+<p class="table-note">
+The ranges are reproduced from the selection criteria used in the project.
+The distance unit and the exact treatment of catalogue uncertainties should
+be specified in the final research manuscript.
+</p>
+
+<h3>3. Methodology</h3>
+
+<p>
+The analysis involved three main stages: photometric light-curve analysis,
+cross-matching with astronomical databases and examination of the planetary
+parameters.
+</p>
+
+<h3>3.1 Lightkurve analysis</h3>
+
+<p>
+The light curves of the selected stars were retrieved from MAST using the
+Lightkurve Python package. The downloaded light curves were processed to remove
+invalid values and outliers before the periodicity analysis.
+</p>
+
+<p>
+The Box Least Squares (BLS) method was used to search for periodic transit-like
+signals. BLS is particularly useful for identifying periodic dips in stellar
+brightness that may be associated with planetary transits.
+</p>
+
+<p>
+The Lomb–Scargle periodogram was also used to investigate periodic variations
+in the light curves. This method is useful for examining periodic signals,
+including stellar variability and rotation-related modulation.
+</p>
+
+
+<h3>3.2 Cross-matching with astronomical databases</h3>
+
+<p>
+To compare the photometric analysis with previously available astronomical
+information, the selected targets were cross-matched with three databases.
+</p>
+
+<ul>
+    <li>
+        <strong>NASA Exoplanet Archive:</strong>
+        Used to identify previously confirmed exoplanets and retrieve their
+        published planetary and orbital parameters.
+    </li>
+    <li>
+        <strong>exo.MAST:</strong>
+        Used to examine TESS Objects of Interest (TOIs) and associated
+        candidate information.
+    </li>
+    <li>
+        <strong>SIMBAD:</strong>
+        Used to investigate stellar classifications and variability information.
+    </li>
+</ul>
+
+<p>
+This cross-matching process helped distinguish previously confirmed planets
+from objects listed as candidates and stars with known variability
+classifications.
+</p>
+
+<h3>3.3 Planetary parameter analysis</h3>
+
+<p>
+For the identified planetary systems, I compiled parameters such as planetary
+radius, orbital period, transit duration, impact parameter, equilibrium
+temperature, transit depth, semi-major axis, planetary mass, eccentricity
+and orbital inclination.
+</p>
+
+<p>
+Additional physical quantities were also calculated or compiled, including
+planetary density, escape velocity, insolation, surface gravity, orbital
+velocity, Safronov number, geometric transit probability and Hill radius.
+These parameters provide a broader view of the physical and dynamical
+properties of the selected planetary systems.
+</p>
+
+<h3>4. Results</h3>
+
+<p>
+The cross-matching and light-curve examination produced several categories
+of objects within the selected sample. The results reported in the original
+project manuscript are summarised below.
+</p>
+
+<div class="results">
+    <div class="result-card">
+        <strong>30</strong>
+        <span>Confirmed exoplanets reported</span>
+    </div>
+    <div class="result-card">
+        <strong>44</strong>
+        <span>TOI candidates reported</span>
+    </div>
+    <div class="result-card">
+        <strong>59</strong>
+        <span>Variable stars reported</span>
+    </div>
+</div>
+
+<div class="callout">
+    <strong>Note on the planetary table:</strong>
+    The detailed parameter dataset supplied for this article contains 31
+    planetary entries. One of these, TIC 257570229 b, is labelled as a
+    TOI transit candidate. The reported count of 30 confirmed exoplanets
+    and the detailed 31-entry table should therefore be reconciled against
+    the final catalogue cross-match before publication.
+</div>
+
+<h3>4.1 Exoplanet host stars</h3>
+
+<p>
+The following table summarises the host stars and the number of planetary
+entries associated with each host in the supplied dataset. The method or
+result field is preserved as supplied; numerical entries have not been
+reinterpreted as orbital periods or other quantities.
+</p>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+    <th>Exoplanet host</th>
+    <th>Count</th>
+    <th>Method / result as supplied</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>TIC 70513361</td><td>1</td><td>11.1478</td></tr>
+<tr><td>TIC 257570229</td><td>1</td><td>11.44024</td></tr>
+<tr><td>TIC 318753380</td><td>1</td><td>15.56845</td></tr>
+<tr><td>TIC 31374837</td><td>3</td><td>12.47593</td></tr>
+<tr><td>TIC 20375215</td><td>1</td><td>RV</td></tr>
+<tr><td>TIC 96195878</td><td>1</td><td>RV</td></tr>
+<tr><td>TIC 94924490</td><td>1</td><td>RV</td></tr>
+<tr><td>TIC 286896213</td><td>1</td><td>RV</td></tr>
+<tr><td>TIC 389315309</td><td>1</td><td>RV</td></tr>
+<tr><td>TIC 180030300</td><td>1</td><td>RV</td></tr>
+<tr><td>TIC 421255607</td><td>1</td><td>RV</td></tr>
+<tr><td>TIC 320264344</td><td>1</td><td>RV</td></tr>
+<tr><td>TIC 120896927</td><td>2</td><td>Not specified</td></tr>
+<tr><td>TIC 4646810</td><td>2</td><td>Not specified</td></tr>
+<tr><td>TIC 358070171</td><td>1</td><td>RV</td></tr>
+<tr><td>TIC 469943599</td><td>2</td><td>RV</td></tr>
+<tr><td>TIC 230183006</td><td>1</td><td>RV</td></tr>
+<tr><td>TIC 180695581</td><td>1</td><td>Not specified</td></tr>
+<tr><td>TIC 16917838</td><td>2</td><td>RV</td></tr>
+<tr><td>TIC 142851295</td><td>1</td><td>RV</td></tr>
+<tr><td>TIC 278380701</td><td>1</td><td>RV</td></tr>
+<tr><td>TIC 170867837</td><td>1</td><td>RV</td></tr>
+<tr><td>TIC 101418130</td><td>1</td><td>RV</td></tr>
+<tr><td>TIC 33355302</td><td>2</td><td>RV</td></tr>
+</tbody>
+</table>
+</div>
+
+<p class="table-note">
+The supplied host counts sum to 31 planetary entries. RV denotes the
+radial-velocity method. The numerical values in the first four rows are
+reproduced without assigning them a physical meaning.
+</p>
+
+<h3>4.2 Planetary parameters</h3>
+
+<p>
+The following table contains the planetary and orbital parameters supplied
+for the selected systems. It includes the original values and calculated
+quantities used in the project. The table is horizontally scrollable so that
+the full dataset remains available on smaller screens.
+</p>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Host star</th><th>Planet</th><th>Radius (Rj)</th><th>Period (days)</th>
+<th>Transit duration (hr)</th><th>Impact parameter</th><th>Teq (K)</th>
+<th>Depth</th><th>a/Rs</th><th>Mass (Mj)</th><th>ω (°)</th>
+<th>log10(g)</th><th>Method</th><th>a (AU)</th><th>Inclination (°)</th>
+<th>Eccentricity</th><th>Density</th><th>Escape velocity</th>
+<th>Insolation</th><th>Surface gravity</th><th>Orbital velocity</th>
+<th>Safronov number</th><th>Transit probability</th><th>Hill radius (AU)</th>
+<th>Stellar mass ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>TIC 20375215</td><td>TIC 20375215 b</td><td>1.18</td><td>3274</td><td>—</td><td>—</td><td>94</td><td>3.3756</td><td>1303.225</td><td>2.4</td><td>245</td><td>3.6307</td><td>RV</td><td>4</td><td>116</td><td>0.03</td><td>1.937</td><td>85.85</td><td>0.013730269</td><td>42.72676382</td><td>13.15</td><td>21.298</td><td>0.0788</td><td>0.3972</td><td>0.00293723</td></tr>
+<tr><td>TIC 96195878</td><td>TIC 96195878 b</td><td>1.26</td><td>4.5557</td><td>—</td><td>—</td><td>926.24</td><td>3.1461</td><td>14.669</td><td>0.62</td><td>262</td><td>2.9859</td><td>RV</td><td>0.0498</td><td>—</td><td>0.086</td><td>0.411</td><td>42.23</td><td>139.9367752</td><td>9.680549277</td><td>121.61</td><td>0.06</td><td>7.2816</td><td>0.0031</td><td>0.00071307</td></tr>
+<tr><td>TIC 94924490</td><td>TIC 94924490 b</td><td>1.17</td><td>2990</td><td>—</td><td>—</td><td>93.04</td><td>3.2832</td><td>1199.034</td><td>3</td><td>78</td><td>3.735</td><td>RV</td><td>3.7</td><td>56</td><td>0.52</td><td>2.484</td><td>96.4</td><td>0.012484894</td><td>54.32503315</td><td>13.14</td><td>26.906</td><td>0.0834</td><td>0.4065</td><td>0.0039775</td></tr>
+<tr><td>TIC 286896213</td><td>TIC 286896213 b</td><td>1.19</td><td>1129</td><td>—</td><td>—</td><td>155.23</td><td>2.3961</td><td>544.385</td><td>2.25</td><td>192.7</td><td>3.5953</td><td>RV</td><td>2</td><td>65</td><td>0.85</td><td>1.771</td><td>82.78</td><td>0.1038941</td><td>39.38220241</td><td>19.87</td><td>8.676</td><td>0.1832</td><td>0.186</td><td>0.00241331</td></tr>
+<tr><td>TIC 389315309</td><td>TIC 389315309 b</td><td>1.08</td><td>17132.15854</td><td>—</td><td>—</td><td>65.91</td><td>1.6285</td><td>3095.08</td><td>21.821</td><td>63.5</td><td>4.6662</td><td>RV</td><td>12.518</td><td>33.99</td><td>0.06</td><td>22.971</td><td>270.59</td><td>0.003145415</td><td>463.6603941</td><td>7.9</td><td>586.882</td><td>0.0323</td><td>2.4921</td><td>0.02367083</td></tr>
+<tr><td>TIC 180030300</td><td>TIC 180030300 b</td><td>0.214</td><td>9.6737</td><td>—</td><td>—</td><td>687.97</td><td>0.0883</td><td>23.247</td><td>0.02</td><td>—</td><td>3.0344</td><td>RV</td><td>0.08</td><td>—</td><td>0</td><td>2.706</td><td>18.4</td><td>38.23704688</td><td>10.82430448</td><td>91.21</td><td>0.02</td><td>4.3537</td><td>0.0016</td><td>0.00002546</td></tr>
+<tr><td>TIC 421255607</td><td>TIC 421255607 b</td><td>1.11</td><td>14901.99295</td><td>—</td><td>—</td><td>59.78</td><td>2.3047</td><td>3095.707</td><td>10.904</td><td>164.7</td><td>4.3412</td><td>RV</td><td>10.817</td><td>93.09</td><td>0.17</td><td>10.573</td><td>188.68</td><td>0.00212826</td><td>219.3814992</td><td>7.84</td><td>289.305</td><td>0.0323</td><td>1.8024</td><td>0.01387861</td></tr>
+<tr><td>TIC 320264344</td><td>TIC 320264344 b</td><td>1.22</td><td>4060</td><td>—</td><td>—</td><td>93.97</td><td>2.8448</td><td>1330.747</td><td>1.3</td><td>281</td><td>3.3354</td><td>RV</td><td>4.6</td><td>91</td><td>0.07</td><td>0.949</td><td>62.14</td><td>0.012994551</td><td>21.64711379</td><td>12.34</td><td>12.67</td><td>0.0751</td><td>0.3708</td><td>0.00157086</td></tr>
+<tr><td>TIC 120896927</td><td>TIC 120896927 b</td><td>0.1579</td><td>4.7559804</td><td>2.5536</td><td>0.39</td><td>998.95</td><td>0.036</td><td>13.191</td><td>0.0205</td><td>62</td><td>3.3094</td><td>Transit</td><td>0.052</td><td>88.36</td><td>0.06</td><td>6.905</td><td>21.69</td><td>169.3783284</td><td>20.38919127</td><td>122.54</td><td>0.016</td><td>7.5288</td><td>0.001</td><td>0.00002224</td></tr>
+<tr><td>TIC 120896927</td><td>TIC 12089692 c</td><td>0.2254</td><td>17.180546</td><td>2.232</td><td>0.88</td><td>651.01</td><td>0.0734</td><td>31.06</td><td>0.0214</td><td>329</td><td>3.0183</td><td>Transit</td><td>0.124</td><td>88.41</td><td>0.1</td><td>2.478</td><td>18.55</td><td>29.7866155</td><td>10.43037686</td><td>79.36</td><td>0.027</td><td>3.1572</td><td>0.0025</td><td>0.00002321</td></tr>
+<tr><td>TIC 4646810</td><td>TIC 4646810 b</td><td>0.1998</td><td>10.924709</td><td>1.8</td><td>0.86</td><td>667.46</td><td>0.0726</td><td>25.397</td><td>0.0178</td><td>160.5</td><td>3.0433</td><td>Transit</td><td>0.09</td><td>87.98</td><td>0.11</td><td>2.959</td><td>17.97</td><td>35.04374074</td><td>11.04841554</td><td>88.81</td><td>0.02</td><td>3.8451</td><td>0.0017</td><td>0.00002124</td></tr>
+<tr><td>TIC 4646810</td><td>TIC 4646810 c</td><td>0.2614</td><td>21.583298</td><td>2.19</td><td>0.9</td><td>533.25</td><td>0.1243</td><td>39.789</td><td>0.028</td><td>247.9</td><td>3.0068</td><td>Transit</td><td>0.141</td><td>88.75</td><td>0.04</td><td>2.079</td><td>19.7</td><td>14.27766712</td><td>10.15780801</td><td>70.96</td><td>0.039</td><td>2.4543</td><td>0.0031</td><td>0.00003341</td></tr>
+<tr><td>TIC 358070171</td><td>TIC 358070171 b</td><td>1.11</td><td>10256</td><td>—</td><td>—</td><td>69.63</td><td>2.1666</td><td>2441.844</td><td>11.3</td><td>248</td><td>4.3566</td><td>RV</td><td>8.8</td><td>19.66</td><td>0.68</td><td>10.957</td><td>192.08</td><td>0.003917388</td><td>227.3002953</td><td>8.93</td><td>231.557</td><td>0.041</td><td>1.4584</td><td>0.01365441</td></tr>
+<tr><td>TIC 469943599</td><td>TIC 469943599 b</td><td>0.214</td><td>3.93404</td><td>—</td><td>—</td><td>1015.96</td><td>0.0669</td><td>12.649</td><td>0.02</td><td>96</td><td>3.0344</td><td>RV</td><td>0.05</td><td>—</td><td>0.16</td><td>2.706</td><td>18.4</td><td>177.31812</td><td>10.82430448</td><td>123.54</td><td>0.011</td><td>7.901</td><td>0.001</td><td>0.0000222</td></tr>
+<tr><td>TIC 469943599</td><td>TIC 469943599 c</td><td>1.16</td><td>566</td><td>—</td><td>—</td><td>198.6</td><td>1.9667</td><td>331.402</td><td>0.35</td><td>42</td><td>2.8094</td><td>RV</td><td>1.31</td><td>—</td><td>0.47</td><td>0.297</td><td>33.07</td><td>0.258315541</td><td>6.447628406</td><td>24.14</td><td>0.938</td><td>0.3016</td><td>0.0663</td><td>0.0003885</td></tr>
+<tr><td>TIC 230183006</td><td>TIC 230183006 b</td><td>1.23</td><td>268.94</td><td>—</td><td>—</td><td>246.28</td><td>2.1602</td><td>195.029</td><td>1.04</td><td>87.6</td><td>3.2314</td><td>RV</td><td>0.78</td><td>—</td><td>0.29</td><td>0.741</td><td>55.36</td><td>0.617715319</td><td>17.03726977</td><td>29.98</td><td>1.705</td><td>0.5147</td><td>0.0584</td><td>0.00125669</td></tr>
+<tr><td>TIC 180695581</td><td>TIC 180695581 b</td><td>0.1335</td><td>0.549371</td><td>0.972</td><td>0.55</td><td>1852.93</td><td>0.0338</td><td>3.517</td><td>0.0077</td><td>—</td><td>3.0282</td><td>Transit</td><td>0.012</td><td>77.7</td><td>0</td><td>4.292</td><td>14.46</td><td>1555.714583</td><td>10.6708742</td><td>232.34</td><td>0.002</td><td>28.7177</td><td>0.0002</td><td>0.00001007</td></tr>
+<tr><td>TIC 16917838</td><td>TIC 16917838 b</td><td>0.26</td><td>8.5399</td><td>—</td><td>—</td><td>592.68</td><td>0.1863</td><td>24.338</td><td>0.0277</td><td>—</td><td>3.0066</td><td>RV</td><td>0.07</td><td>—</td><td>0</td><td>2.09</td><td>19.65</td><td>24.90583673</td><td>10.15313124</td><td>87.94</td><td>0.025</td><td>5.0051</td><td>0.0017</td><td>0.00004335</td></tr>
+<tr><td>TIC 16917838</td><td>TIC 16917838 c</td><td>0.318</td><td>29.671</td><td>—</td><td>—</td><td>391.32</td><td>0.2787</td><td>55.828</td><td>0.039</td><td>—</td><td>2.9806</td><td>RV</td><td>0.161</td><td>—</td><td>0</td><td>1.608</td><td>21.08</td><td>4.708097681</td><td>9.563128688</td><td>57.98</td><td>0.066</td><td>2.1761</td><td>0.0044</td><td>0.00006103</td></tr>
+<tr><td>TIC 142851295</td><td>TIC 142851295 b</td><td>1.22</td><td>380.85001</td><td>—</td><td>—</td><td>207.11</td><td>2.7212</td><td>268.79</td><td>1.25</td><td>356.2</td><td>3.3184</td><td>RV</td><td>0.95</td><td>—</td><td>0.75</td><td>0.913</td><td>60.94</td><td>0.310959335</td><td>20.81613041</td><td>26.99</td><td>2.548</td><td>0.3747</td><td>0.0759</td><td>0.00152981</td></tr>
+<tr><td>TIC 278380701</td><td>TIC 278380701 b</td><td>1.098</td><td>2.81805</td><td>—</td><td>—</td><td>1018.06</td><td>2.1473</td><td>11.171</td><td>0.25</td><td>87.3</td><td>2.711</td><td>RV</td><td>0.04</td><td>—</td><td>0</td><td>0.25</td><td>28.73</td><td>182.268</td><td>5.140436516</td><td>131.54</td><td>0.024</td><td>9.0107</td><td>0.0019</td><td>0.00030596</td></tr>
+<tr><td>TIC 170867837</td><td>TIC 170867837 b</td><td>1.14</td><td>20608.14049</td><td>—</td><td>—</td><td>46.73</td><td>4.1558</td><td>5010.355</td><td>5.473</td><td>89.4</td><td>4.0186</td><td>RV</td><td>13.39</td><td>52.66</td><td>0.26</td><td>4.899</td><td>131.9</td><td>0.000794705</td><td>104.3758439</td><td>7.05</td><td>175.02</td><td>0.02</td><td>1.7731</td><td>0.00696603</td></tr>
+<tr><td>TIC 101418130</td><td>TIC 101418130 b</td><td>1.12</td><td>25775.78859</td><td>—</td><td>—</td><td>52.56</td><td>2.1754</td><td>4394.35</td><td>9.053</td><td>142.4</td><td>4.2526</td><td>RV</td><td>15.947</td><td>29.82</td><td>0.22</td><td>8.545</td><td>171.15</td><td>0.001271861</td><td>178.8957404</td><td>6.71</td><td>324.95</td><td>0.0228</td><td>2.4342</td><td>0.01066913</td></tr>
+<tr><td>TIC 33355302</td><td>TIC 33355302 b</td><td>0.322</td><td>5.6</td><td>—</td><td>—</td><td>798.86</td><td>0.2172</td><td>18.172</td><td>0.04</td><td>30</td><td>2.9806</td><td>RV</td><td>0.06</td><td>—</td><td>0.15</td><td>1.589</td><td>21.22</td><td>64.47516667</td><td>9.563128688</td><td>107.41</td><td>0.02</td><td>5.3638</td><td>0.0015</td><td>0.00004895</td></tr>
+<tr><td>TIC 33355302</td><td>TIC 33355302 c</td><td>1.11</td><td>237.6</td><td>—</td><td>—</td><td>233.85</td><td>2.5811</td><td>205.946</td><td>0.33</td><td>233</td><td>2.8221</td><td>RV</td><td>0.68</td><td>—</td><td>0.19</td><td>0.32</td><td>32.82</td><td>0.501969291</td><td>6.638959205</td><td>31.9</td><td>0.529</td><td>0.4733</td><td>0.0349</td><td>0.00040387</td></tr>
+<tr><td>TIC 70513361</td><td>TIC 70513361 b</td><td>0.1847</td><td>11.14529</td><td>1.501</td><td>0.72</td><td>585.74</td><td>0.0495</td><td>41.091</td><td>0.0155</td><td>—</td><td>3.0517</td><td>Transit</td><td>0.163</td><td>89.01</td><td>—</td><td>3.262</td><td>17.44</td><td>19.30859648</td><td>11.26419085</td><td>70.39</td><td>0.031</td><td>2.4213</td><td>0.0029</td><td>0.00001626</td></tr>
+<tr><td>TIC 257570229</td><td>TIC 257570229 b</td><td>0.2197</td><td>11.3348578</td><td>2.623</td><td>0.24</td><td>495.61</td><td>0.1092</td><td>33.108</td><td>—</td><td>—</td><td>—</td><td>TOI transit candidate</td><td>—</td><td>—</td><td>—</td><td>NaN</td><td>NaN</td><td>NaN</td><td>NaN</td><td>—</td><td>NaN</td><td>NaN</td><td>NaN</td><td>NaN</td></tr>
+<tr><td>TIC 318753380</td><td>TIC 318753380 b</td><td>0.2108</td><td>15.66858</td><td>4.548</td><td>0.22</td><td>517.17</td><td>0.1179</td><td>35.782</td><td>0.0151</td><td>86</td><td>2.9255</td><td>Transit</td><td>0.105</td><td>89.72</td><td>0.3</td><td>2.138</td><td>16.11</td><td>13.81765079</td><td>8.423643914</td><td>74.68</td><td>0.023</td><td>3.2426</td><td>0.002</td><td>0.00002184</td></tr>
+<tr><td>TIC 31374837</td><td>TIC 31374837 b</td><td>0.1142</td><td>0.490047</td><td>1.0123</td><td>0.34</td><td>1881.02</td><td>0.0258</td><td>3.324</td><td>0.0097</td><td>—</td><td>3.2639</td><td>Transit</td><td>0.011</td><td>84.3</td><td>0</td><td>8.637</td><td>17.54</td><td>2249.721488</td><td>18.36115513</td><td>254.04</td><td>0.002</td><td>30.7198</td><td>0.0002</td><td>0.00001157</td></tr>
+<tr><td>TIC 31374837</td><td>TIC 31374837 c</td><td>0.133</td><td>4.8494</td><td>—</td><td>—</td><td>876.86</td><td>0.035</td><td>15.296</td><td>0.0089</td><td>—</td><td>3.0961</td><td>RV</td><td>0.052</td><td>86.35</td><td>0</td><td>5.017</td><td>15.57</td><td>100.6717086</td><td>12.47670768</td><td>116.84</td><td>0.009</td><td>6.4984</td><td>0.0008</td><td>0.00001062</td></tr>
+<tr><td>TIC 31374837</td><td>TIC 31374837 d</td><td>0.2935</td><td>12.46103</td><td>3.3196</td><td>0.15</td><td>638.73</td><td>0.1703</td><td>28.828</td><td>0.0311</td><td>—</td><td>2.9524</td><td>Transit</td><td>0.098</td><td>89.7</td><td>0</td><td>1.631</td><td>19.6</td><td>28.34405456</td><td>8.961898069</td><td>85.11</td><td>0.027</td><td>3.4481</td><td>0.0023</td><td>0.00003711</td></tr>
+</tbody>
+</table>
+</div>
+
+<p class="table-note">
+An em dash indicates a blank value in the supplied table. NaN indicates a
+non-numerical or unavailable value in the source data. The original units
+for density, escape velocity, insolation, surface gravity, orbital velocity,
+Safronov number and transit probability should be explicitly documented
+before scientific publication.
+</p>
+
+<h3>4.3 Variable stars identified in the sample</h3>
+
+<p>
+The cross-matching with SIMBAD provided variability information for a number
+of stars in the selected sample. The classifications supplied for the
+variable-star list are reproduced below.
+</p>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Variable-star TIC identifier</th><th>Classification</th></tr>
+</thead>
+<tbody>
+<tr><td>TIC 16917838</td><td>ROT</td></tr>
+<tr><td>TIC 381728201</td><td>ROT</td></tr>
+<tr><td>TIC 243186210</td><td>DCEP</td></tr>
+<tr><td>TIC 34576133</td><td>BY</td></tr>
+<tr><td>TIC 113952263</td><td>SB</td></tr>
+<tr><td>TIC 14331880</td><td>ROT</td></tr>
+<tr><td>TIC 15756558</td><td>ROT</td></tr>
+<tr><td>TIC 467644708</td><td>SB1-AB</td></tr>
+<tr><td>TIC 15902489</td><td>ROT</td></tr>
+<tr><td>TIC 434236912</td><td>ROT</td></tr>
+<tr><td>TIC 17099206</td><td>ROT</td></tr>
+<tr><td>TIC 17144636</td><td>ROT</td></tr>
+<tr><td>TIC 435903398</td><td>BY</td></tr>
+<tr><td>TIC 245794704</td><td>BY</td></tr>
+<tr><td>TIC 171199606</td><td>ROT</td></tr>
+<tr><td>TIC 234837298</td><td>BY</td></tr>
+<tr><td>TIC 139270134</td><td>SB1-AB</td></tr>
+<tr><td>TIC 461659099</td><td>RR</td></tr>
+<tr><td>TIC 264973344</td><td>ROT</td></tr>
+<tr><td>TIC 20496343</td><td>BY+UV &amp; PULS</td></tr>
+<tr><td>TIC 56914413</td><td>ROT</td></tr>
+<tr><td>TIC 17122372</td><td>SB2</td></tr>
+<tr><td>TIC 469037731</td><td>BY</td></tr>
+<tr><td>TIC 115810824</td><td>ROT</td></tr>
+<tr><td>TIC 8153770</td><td>ROT</td></tr>
+<tr><td>TIC 318275572</td><td>ROT</td></tr>
+<tr><td>TIC 325315797</td><td>BY</td></tr>
+<tr><td>TIC 334555674</td><td>BY</td></tr>
+<tr><td>TIC 9454206</td><td>ROT</td></tr>
+<tr><td>TIC 357231365</td><td>ROT</td></tr>
+<tr><td>TIC 4749832</td><td>SB1-AB</td></tr>
+<tr><td>TIC 180695581</td><td>ROT</td></tr>
+<tr><td>TIC 393944916</td><td>ROT</td></tr>
+<tr><td>TIC 116483418</td><td>SB1-AB</td></tr>
+<tr><td>TIC 298262684</td><td>BY</td></tr>
+<tr><td>TIC 282941472</td><td>ROT</td></tr>
+<tr><td>TIC 219495254</td><td>ROT</td></tr>
+<tr><td>TIC 257090553</td><td>ROT</td></tr>
+<tr><td>TIC 7679229</td><td>ROT</td></tr>
+<tr><td>TIC 159515804</td><td>ROT</td></tr>
+<tr><td>TIC 271047371</td><td>ROT</td></tr>
+<tr><td>TIC 28230919</td><td>ROT (EB)</td></tr>
+<tr><td>TIC 404393507</td><td>ROT/BY</td></tr>
+<tr><td>TIC 217981254</td><td>SB1/ROT</td></tr>
+<tr><td>TIC 97173329</td><td>BY ROT</td></tr>
+<tr><td>TIC 158595208</td><td>BY ROT</td></tr>
+<tr><td>TIC 266716010</td><td>ROT</td></tr>
+<tr><td>TIC 250158330</td><td>SB1</td></tr>
+<tr><td>TIC 126741967</td><td>SB</td></tr>
+<tr><td>TIC 45770873</td><td>SB</td></tr>
+<tr><td>TIC 33359422</td><td>SB</td></tr>
+<tr><td>TIC 20375215</td><td>ROT</td></tr>
+<tr><td>TIC 96195878</td><td>BY</td></tr>
+<tr><td>TIC 180030300</td><td>ROT</td></tr>
+<tr><td>TIC 263605985</td><td>SB1</td></tr>
+<tr><td>TIC 254327587</td><td>ROT</td></tr>
+<tr><td>TIC 72034540</td><td>SB</td></tr>
+<tr><td>TIC 142452434</td><td>DCEP/ROT</td></tr>
+<tr><td>TIC 260796911</td><td>SB</td></tr>
+</tbody>
+</table>
+</div>
+
+<p class="table-note">
+The classifications are retained as supplied. Abbreviations such as ROT,
+BY, DCEP, RR, SB and SB1/SB2 should be expanded in the final paper using
+the relevant SIMBAD classification definitions. The list is not intended
+to imply that all listed stars are confirmed exoplanet hosts.
+</p>
+
+<h3>4.4 Emission-line stars</h3>
+
+<p>
+The following TIC identifiers were included in the supplied emission-line-star
+list. They are presented separately from the exoplanet-host and variability
+tables because emission-line classification is a distinct stellar property.
+</p>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>No.</th><th>Emission-line star TIC identifier</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>TIC 422688794</td></tr>
+<tr><td>2</td><td>TIC 259262534</td></tr>
+<tr><td>3</td><td>TIC 171002873</td></tr>
+<tr><td>4</td><td>TIC 47489966</td></tr>
+<tr><td>5</td><td>TIC 310863522</td></tr>
+<tr><td>6</td><td>TIC 453408662</td></tr>
+<tr><td>7</td><td>TIC 309632151</td></tr>
+<tr><td>8</td><td>TIC 172903538</td></tr>
+<tr><td>9</td><td>TIC 396734013</td></tr>
+<tr><td>10</td><td>TIC 270680847</td></tr>
+<tr><td>11</td><td>TIC 371489548</td></tr>
+<tr><td>12</td><td>TIC 150226097</td></tr>
+<tr><td>13</td><td>TIC 331899888</td></tr>
+<tr><td>14</td><td>TIC 138731860</td></tr>
+<tr><td>15</td><td>TIC 97526849</td></tr>
+<tr><td>16</td><td>TIC 293567363</td></tr>
+<tr><td>17</td><td>TIC 373674778</td></tr>
+<tr><td>18</td><td>TIC 115906544</td></tr>
+<tr><td>19</td><td>TIC 156376212</td></tr>
+<tr><td>20</td><td>TIC 86229068</td></tr>
+<tr><td>21</td><td>TIC 389355159</td></tr>
+<tr><td>22</td><td>TIC 199496227</td></tr>
+<tr><td>23</td><td>TIC 165373460</td></tr>
+<tr><td>24</td><td>TIC 27212832</td></tr>
+<tr><td>25</td><td>TIC 22859629</td></tr>
+<tr><td>26</td><td>TIC 310363348</td></tr>
+<tr><td>27</td><td>TIC 357500019</td></tr>
+<tr><td>28</td><td>TIC 41830276</td></tr>
+<tr><td>29</td><td>TIC 172752010</td></tr>
+<tr><td>30</td><td>TIC 356350139</td></tr>
+<tr><td>31</td><td>TIC 28308696</td></tr>
+<tr><td>32</td><td>TIC 23139536</td></tr>
+<tr><td>33</td><td>TIC 14343469</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>5. Understanding the Planetary Parameters</h3>
+
+<p>
+The compiled parameters provide several ways to examine the physical
+characteristics of the planetary systems. Some of the important quantities
+considered in this project are described below.
+</p>
+
+<ul>
+    <li><strong>Planetary radius:</strong> Provides an estimate of the planet's size relative to Jupiter.</li>
+    <li><strong>Orbital period:</strong> Describes the time taken by a planet to complete one revolution around its host star.</li>
+    <li><strong>Equilibrium temperature:</strong> Provides an estimate of the planet's temperature under an assumed energy-balance model.</li>
+    <li><strong>Planetary density:</strong> Helps investigate the possible bulk composition of a planet when reliable mass and radius measurements are available.</li>
+    <li><strong>Escape velocity:</strong> Describes the minimum speed required to escape the gravitational field of the planet.</li>
+    <li><strong>Insolation:</strong> Represents the stellar energy received by a planet relative to a specified reference.</li>
+    <li><strong>Surface gravity:</strong> Describes the gravitational acceleration at the planetary surface.</li>
+    <li><strong>Orbital velocity:</strong> Describes the planet's orbital speed under the adopted orbital model.</li>
+    <li><strong>Safronov number:</strong> Provides a dimensionless measure related to a planet's gravitational scattering and accretion capabilities.</li>
+    <li><strong>Geometric transit probability:</strong> Estimates the likelihood that an orbit is aligned to produce a transit from our line of sight.</li>
+    <li><strong>Hill radius:</strong> Estimates the region around a planet in which its gravitational influence dominates over that of the host star.</li>
+</ul>
+
+<h3>6. Broader Exoplanet Catalogue Analysis</h3>
+
+<p>
+In addition to examining the selected TESS sample, the NASA Exoplanet Archive
+was used to obtain a broader collection of confirmed exoplanet data. The
+larger catalogue provides an opportunity to investigate relationships
+between planetary properties and host-star characteristics beyond the
+initial sample.
+</p>
+
+<p>
+The broader analysis can be used to explore distributions and possible
+correlations involving planetary radius, mass, orbital period, stellar
+temperature, stellar mass and other host-star parameters.
+</p>
+
+<p>
+These relationships must be interpreted with care. The observed population
+of exoplanets is influenced by detection biases, observational selection
+effects and the sensitivity of different detection methods. Consequently,
+the observed distribution does not necessarily represent the intrinsic
+population of planetary systems.
+</p>
+
+<h3>7. Discussion</h3>
+
+<p>
+The combination of TESS photometric analysis and archival cross-matching
+provides a useful approach for examining known planetary systems and
+identifying objects that warrant further investigation. Lightkurve makes
+it possible to process and inspect photometric time-series data, while
+the NASA Exoplanet Archive, exo.MAST and SIMBAD provide complementary
+information about planets, candidates and stellar classifications.
+</p>
+
+<p>
+The results also demonstrate why transit-like signals should not be
+interpreted in isolation. Stellar variability, eclipsing binaries,
+instrumental effects and other astrophysical phenomena can produce
+brightness variations that resemble planetary transits. Comparing
+photometric results with established catalogues and examining the
+properties of the host stars are therefore important steps in the analysis.
+</p>
+
+<p>
+The planetary parameter dataset offers an additional way to investigate
+the diversity of the selected systems. However, comparisons between
+different detection methods should account for differences in measurement
+precision, parameter availability and the assumptions used to derive
+physical quantities.
+</p>
+
+<h3>8. Data Sources and Parameter Disclaimer</h3>
+
+<p>
+The stellar, planetary and orbital parameters presented in this project
+were obtained, compiled or derived using astronomical data and published
+information available through the following databases:
+</p>
+
+<ul>
+    <li>NASA Exoplanet Archive</li>
+    <li>exo.MAST</li>
+    <li>SIMBAD Astronomical Database</li>
+</ul>
+
+<p>
+The NASA Exoplanet Archive was used to identify previously confirmed
+exoplanets and retrieve their published planetary and orbital parameters.
+exo.MAST was used to examine TESS Objects of Interest and associated
+candidate information. SIMBAD was used to investigate stellar
+classifications and variability information.
+</p>
+
+<p>
+Additional physical parameters calculated in this project were derived
+using the available database values and the corresponding physical
+relations. These calculated quantities should therefore be understood
+as derived results based on archival input parameters, rather than
+independent observational measurements.
+</p>
+
+<p>
+The Lightkurve analysis was performed separately to examine TESS
+photometric light curves and transit-like signals. The recovery or
+reanalysis of a photometric signal associated with a previously known
+planet is not, by itself, an independent confirmation or discovery
+of that planet. Confirmed planets, TOI candidates and other variable
+objects are treated as distinct categories in this study.
+</p>
+
+<p>
+Any differences between the values presented here and those available
+in the original databases may arise from adopted input parameters,
+reference values, calculation assumptions, rounding or subsequent
+updates to the archival catalogues. The original databases remain the
+primary sources for the underlying published measurements and
+classifications.
+</p>
+
+<h3>9. Summary and Conclusions</h3>
+
+<p>
+This project presents an analysis of a selected sample of approximately
+500–501 stars from the TESS Candidate Target List v8.01. Their
+photometric light curves were examined using Lightkurve, with BLS and
+Lomb–Scargle methods used to investigate transit-like and periodic
+signals.
+</p>
+
+<p>
+Cross-matching with the NASA Exoplanet Archive, exo.MAST and SIMBAD
+provided information about confirmed exoplanets, TOI candidates and
+stellar variability. The original manuscript reports 30 confirmed
+exoplanets, 44 TOI candidates and 59 variable stars in the selected
+sample.
+</p>
+
+<p>
+The project also involved compiling planetary and orbital parameters
+and examining additional physical quantities, including density,
+escape velocity, insolation, surface gravity, orbital velocity,
+Safronov number, transit probability and Hill radius.
+</p>
+
+<p>
+Overall, this work combines photometric time-series analysis with
+archival astronomical data to examine exoplanetary systems and their
+host stars. It provides a foundation for further investigation of
+planetary properties, stellar characteristics and the observational
+biases that influence the currently known exoplanet population.
+</p>
+
+<h3>10. References and Data Resources</h3>
+
+<ol>
+    <li>
+        Wolszczan, A., &amp; Frail, D. A. (1992).
+        A planetary system around the millisecond pulsar PSR1257+12.
+        <em>Nature, 355</em>, 145–147.
+        <a href="https://doi.org/10.1038/355145a0" target="_blank">
+            https://doi.org/10.1038/355145a0
+        </a>
+    </li>
+
+    <li>
+        Mayor, M., &amp; Queloz, D. (1995).
+        A Jupiter-mass companion to a solar-type star.
+        <em>Nature, 378</em>, 355–359.
+        <a href="https://doi.org/10.1038/378355a0" target="_blank">
+            https://doi.org/10.1038/378355a0
+        </a>
+    </li>
+
+    <li>
+        Valencia, D., Moro-Martín, A., &amp; Teske, J. (2025).
+        Diversity of exoplanets. In <em>Treatise on Geochemistry</em>
+        (3rd ed., Vol. 7, pp. 19–49). Elsevier.
+        <a href="https://doi.org/10.1016/B978-0-323-99762-1.00139-X"
+           target="_blank">
+            https://doi.org/10.1016/B978-0-323-99762-1.00139-X
+        </a>
+    </li>
+
+    <li>
+        NASA Exoplanet Archive:
+        <a href="https://exoplanetarchive.ipac.caltech.edu/" target="_blank">
+            https://exoplanetarchive.ipac.caltech.edu/
+        </a>
+    </li>
+
+    <li>
+        Mikulski Archive for Space Telescopes (MAST):
+        <a href="https://mast.stsci.edu/" target="_blank">
+            https://mast.stsci.edu/
+        </a>
+    </li>
+
+    <li>
+        exo.MAST:
+        <a href="https://exo.mast.stsci.edu/" target="_blank">
+            https://exo.mast.stsci.edu/
+        </a>
+    </li>
+
+    <li>
+        SIMBAD Astronomical Database:
+        <a href="https://simbad.cds.unistra.fr/simbad/" target="_blank">
+            https://simbad.cds.unistra.fr/simbad/
+        </a>
+    </li>
+
+    <li>
+        Lightkurve documentation:
+        <a href="https://lightkurve.github.io/lightkurve/" target="_blank">
+            https://lightkurve.github.io/lightkurve/
+        </a>
+    </li>
+</ol>
+
+<p>
+Thank you for reading!
+</p>
+
+</article>
+</main>
+
+<footer>
+    <p>© 2026 Dharanesh Palaniappan</p>
+</footer>
+
+</body>
+</html>
